@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PromptOps lab</title>
+<style>
+:root{--bg:#e9edf1;--panel:#f8fafb;--ink:#12202b;--mute:#5a6b78;--line:#c3ccd4;--accent:#0a6b84;--good:#1b7a49;--bad:#b3261e;--warn:#9a6a10;--code:#101c26;--codeink:#d7e6ee}
+@media (prefers-color-scheme:dark){:root{--bg:#0f171d;--panel:#16222b;--ink:#e3edf2;--mute:#8da0ad;--line:#2b3b47;--accent:#4cc3e0;--good:#4fcf8c;--bad:#ff7b72;--warn:#e3b341;--code:#0a1218}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Segoe UI",system-ui,sans-serif}
+header{padding:18px 24px 0;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+h1{font-size:22px;margin:0;font-weight:700;letter-spacing:-.01em}header p{margin:0;color:var(--mute)}
+nav{display:flex;gap:4px;padding:12px 24px 0;border-bottom:1px solid var(--line)}
+nav button{background:none;border:0;border-bottom:3px solid transparent;padding:8px 14px;font:inherit;color:var(--mute);cursor:pointer}
+nav button[aria-selected=true]{color:var(--ink);border-color:var(--accent);font-weight:600}
+button:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{padding:20px 24px 40px;max-width:1280px;margin:auto}section[hidden]{display:none}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin-bottom:12px}
+label{display:flex;flex-direction:column;font-size:13px;color:var(--mute);gap:4px}
+select,textarea{font:inherit;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:7px 9px}
+textarea{width:100%;min-height:96px;resize:vertical}
+.go{background:var(--accent);color:#fff;border:0;border-radius:4px;padding:9px 18px;font:inherit;font-weight:600;cursor:pointer}
+@media (prefers-color-scheme:dark){.go{color:#04222b}}
+.ghost{background:none;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:8px 12px;font:inherit;cursor:pointer}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media (max-width:800px){.cols{grid-template-columns:1fr}}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px;min-width:0}
+.col h2{font-size:15px;margin:0 0 10px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:10px 0}
+.stat b{display:block;font-size:17px;font-variant-numeric:tabular-nums}.stat span{font-size:12px;color:var(--mute)}
+.stat.best b{color:var(--good)}
+pre{background:var(--code);color:var(--codeink);padding:12px;border-radius:4px;overflow:auto;margin:8px 0 0;font:13px/1.45 ui-monospace,Consolas,monospace;max-height:340px;white-space:pre-wrap;word-break:break-word}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;border:1px solid var(--line);margin-right:4px}
+.ok{color:var(--good);border-color:var(--good)}.err{color:var(--bad);border-color:var(--bad)}.warn{color:var(--warn);border-color:var(--warn)}
+table{border-collapse:collapse;width:100%;font-size:13px;background:var(--panel)}th,td{border:1px solid var(--line);padding:6px 8px;text-align:right;font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}.scroll{overflow-x:auto}.mute{color:var(--mute)}
+</style></head><body>
+<header><h1>PromptOps lab</h1><p>Compare prompt versions and models on the same input, with validation, cost and latency measured for every run.</p></header>
+<nav role="tablist"><button role="tab" aria-selected="true" data-t="exp">Experiment</button><button role="tab" aria-selected="false" data-t="reg">Prompt registry</button><button role="tab" aria-selected="false" data-t="rep">Regression report</button><button role="tab" aria-selected="false" data-t="tel">Live telemetry</button></nav>
+<main>
+<section id="exp">
+ <div class="row"><label>Task<select id="task"></select></label><button class="ghost" id="sample">Load sample input</button></div>
+ <label>Messy instructions<textarea id="input">Team offsite in Pune on 3 March. kickoff at 10am. lunch at 1pm. demo at 3:30pm. Priya books venue. Keep the body under 25 words.</textarea></label>
+ <div class="row" style="margin-top:12px"><span class="mute">Add [[MALFORMED]], [[TIMEOUT]], [[TIMEOUT_ALL]] or [[INTERRUPT]] to the text to inject a failure into the mock backends.</span></div>
+ <div class="cols">
+  <div class="col" id="A"><h2>Variant A</h2><div class="row"><label>Prompt<select class="pv"></select></label><label>Model<select class="md"></select></label></div><div class="out"></div></div>
+  <div class="col" id="B"><h2>Variant B</h2><div class="row"><label>Prompt<select class="pv"></select></label><label>Model<select class="md"></select></label></div><div class="out"></div></div>
+ </div>
+ <div class="row" style="margin-top:14px"><button class="go" id="run">Run both variants</button><button class="ghost" id="streamA">Stream variant A</button><button class="ghost" id="route">Use the router instead</button></div>
+ <pre id="live" hidden></pre>
+</section>
+<section id="reg" hidden><div id="regbody"></div></section>
+<section id="rep" hidden><div id="repbody" class="scroll"></div></section>
+<section id="tel" hidden><div id="telbody"></div></section>
+</main>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];let META,PROMPTS;
+const SAMPLES={schedule:"Hackathon at IIT Delhi on 21 April. registration 9am. coding starts 10am. judging 5pm. Meera arranges wifi asap.",announcement:"Product launch party at Jamshedpur on 12 June. doors open 6pm. keynote at 7pm. Keep the body under 25 words.",task_list:"Quarterly review in Mumbai. Nikhil updates dashboard critical. Sana books cab. Vikram arranges lights optional.",content_pack:"Open mic night in Goa on 14 February. doors 7pm. headliner 9pm. Use exactly 4 hashtags."};
+const j=(u,o)=>fetch(u,o).then(r=>r.ok?r.json():r.json().then(e=>Promise.reject(e.detail||r.statusText)));
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function fillPrompts(){const t=$('#task').value;$$('.pv').forEach((s,i)=>{s.innerHTML=PROMPTS[t].versions.map(v=>`<option>${v.version}</option>`).join('');s.value=i?PROMPTS[t].active:PROMPTS[t].versions[0].version})}
+async function init(){META=await j('/api/models');PROMPTS=await j('/api/prompts');
+ $('#task').innerHTML=Object.keys(META.tasks).map(t=>`<option>${t}</option>`).join('');
+ $$('.md').forEach((s,i)=>{s.innerHTML=META.models.map(m=>`<option>${m.name}</option>`).join('');s.selectedIndex=Math.min(i,META.models.length-1)});
+ fillPrompts();$('#task').onchange=()=>{fillPrompts();$('#input').value=SAMPLES[$('#task').value]}}
+function card(r){const a=r.attempts||[];return `<div><span class="tag ${r.ok?'ok':'err'}">${r.ok?'valid JSON':'failed'}</span>${r.cached?'<span class="tag">cached</span>':''}${r.retried?'<span class="tag warn">retried</span>':''}${r.repaired?'<span class="tag warn">repaired</span>':''}${r.fallback_used?'<span class="tag warn">fallback</span>':''}</div>
+<div class="stats"><div class="stat"><b>${r.latency_s}s</b><span>latency</span></div><div class="stat"><b>${r.input_tokens+r.output_tokens}</b><span>tokens</span></div><div class="stat"><b>$${r.cost_usd}</b><span>est. cost</span></div><div class="stat"><b>${a.length}</b><span>attempts</span></div></div>
+${(r.warnings||[]).map(w=>`<div class="tag warn">${esc(w)}</div>`).join('')}${r.error?`<pre>${esc(r.error)}</pre>`:''}<pre>${esc(JSON.stringify(r.data,null,2)||'no output')}</pre>
+<details><summary class="mute">Attempt log</summary><pre>${esc(a.map(x=>`${x.model} #${x.attempt}: ${x.ok?'ok':x.error}${x.repairs.length?' (repairs: '+x.repairs+')':''}`).join('\n'))}</pre></details>`}
+$('#run').onclick=async()=>{$$('.out').forEach(o=>o.innerHTML='<p class="mute">Running…</p>');
+ const vs=$$('.col').map(c=>({prompt_version:c.querySelector('.pv').value,model:c.querySelector('.md').value}));
+ try{const d=await j('/api/compare',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({task:$('#task').value,input:$('#input').value,variants:vs})});
+  $$('.out').forEach((o,i)=>o.innerHTML=card(d.results[i]));
+  const rs=d.results;if(rs.every(r=>r.ok)){[['latency_s'],['cost_usd']].forEach(([k],n)=>{const w=rs[0][k]<=rs[1][k]?0:1;$$('.out')[w].querySelectorAll('.stat')[n?2:0].classList.add('best')})}
+ }catch(e){$$('.out').forEach(o=>o.innerHTML=`<pre>${esc(e)}</pre>`)}};
+$('#route').onclick=async()=>{const r=await j('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({task:$('#task').value,input:$('#input').value,use_cache:false})});
+ $('.out').innerHTML=`<p class="mute">Router chose ${r.models_tried.join(' → ')} (balanced priority)</p>`+card(r)};
+$('#streamA').onclick=()=>{const c=$('#A'),p=c.querySelector('.pv').value,m=c.querySelector('.md').value,L=$('#live');L.hidden=false;L.textContent='';
+ const es=new EventSource(`/api/stream?task=${$('#task').value}&input=${encodeURIComponent($('#input').value)}&prompt_version=${p}&model=${m}`);
+ es.addEventListener('start',()=>L.textContent='');es.addEventListener('chunk',e=>L.textContent+=JSON.parse(e.data).text);
+ es.addEventListener('interrupted',()=>L.textContent+='\n[stream interrupted, retrying without streaming]');
+ es.addEventListener('final',e=>{es.close();$('#A .out').innerHTML=card(JSON.parse(e.data))});es.onerror=()=>es.close()};
+$('#sample').onclick=()=>$('#input').value=SAMPLES[$('#task').value];
+$$('nav button').forEach(b=>b.onclick=async()=>{$$('nav button').forEach(x=>x.setAttribute('aria-selected',x===b));$$('main>section').forEach(s=>s.hidden=s.id!==b.dataset.t);
+ if(b.dataset.t==='reg'){PROMPTS=await j('/api/prompts');$('#regbody').innerHTML=Object.entries(PROMPTS).map(([t,p])=>`<h3>${t} <span class="tag ok">active ${p.active}</span></h3>`+p.versions.map(v=>`<div class="col" style="margin-bottom:10px"><b>${v.version}</b> <span class="mute">${v.created} · variables: ${v.variables.join(', ')}</span><p>${esc(v.changelog)}</p><pre>${esc(v.template)}</pre></div>`).join('')).join('')}
+ if(b.dataset.t==='rep'){try{const d=await j('/api/report');const f=x=>typeof x==='number'&&x<=1&&x>=0?(x*100).toFixed(0)+'%':x;
+  $('#repbody').innerHTML=`<p class="mute">${d.n_cases} fixed test cases. Latency and prices come from the mock backends and are simulated.</p><table><tr><th>config</th><th>valid first try</th><th>valid final</th><th>instruction following</th><th>pass rate</th><th>mean latency s</th><th>p95 s</th><th>cost USD</th></tr>${d.configs.map(c=>`<tr><td>${c.label}</td><td>${f(c.schema_valid_raw)}</td><td>${f(c.schema_valid_final)}</td><td>${f(c.instruction_following)}</td><td>${f(c.pass_rate)}</td><td>${c.latency_mean_s}</td><td>${c.latency_p95_s}</td><td>${c.cost_usd}</td></tr>`).join('')}</table>
+  <h3>Is the cheaper model enough?</h3><table><tr><th>task</th><th>small pass</th><th>large pass</th><th>small cost</th><th>large cost</th><th>verdict</th></tr>${d.cheaper_model.map(r=>`<tr><td>${r.task}</td><td>${f(r.small_pass)}</td><td>${f(r.large_pass)}</td><td>${r.small_cost}</td><td>${r.large_cost}</td><td>${r.verdict}</td></tr>`).join('')}</table>`}catch(e){$('#repbody').innerHTML=`<p>${esc(e)}</p>`}}
+ if(b.dataset.t==='tel'){const d=await j('/api/telemetry');$('#telbody').innerHTML=d.runs?`<pre>${esc(JSON.stringify(d,null,2))}</pre>`:'<p>No runs yet. Run an experiment first.</p>'}});
+init();
+</script></body></html>
