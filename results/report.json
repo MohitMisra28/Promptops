@@ -1,0 +1,5361 @@
+{
+ "n_cases": 50,
+ "configs": [
+  {
+   "label": "v1 + mock-small",
+   "prompt_version": "v1",
+   "model": "mock-small",
+   "cases": 50,
+   "schema_valid_raw": 0.592,
+   "schema_valid_final": 0.959,
+   "instruction_following": 0.75,
+   "pass_rate": 0.76,
+   "latency_mean_s": 0.757,
+   "latency_p95_s": 1.36,
+   "tokens": 6791,
+   "cost_usd": 0.00287,
+   "retry_rate": 0.16,
+   "fallback_rate": 0.0,
+   "failures": [
+    {
+     "id": "tc04",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc08",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc12",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc16",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc20",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc24",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc28",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc32",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc36",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc38",
+     "task": "announcement",
+     "why": [
+      "body has 26 words, limit 25"
+     ]
+    },
+    {
+     "id": "tc40",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc45",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s)"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "v1 + mock-large",
+   "prompt_version": "v1",
+   "model": "mock-large",
+   "cases": 50,
+   "schema_valid_raw": 0.939,
+   "schema_valid_final": 0.98,
+   "instruction_following": 0.771,
+   "pass_rate": 0.78,
+   "latency_mean_s": 2.056,
+   "latency_p95_s": 2.784,
+   "tokens": 5967,
+   "cost_usd": 0.05865,
+   "retry_rate": 0.04,
+   "fallback_rate": 0.0,
+   "failures": [
+    {
+     "id": "tc04",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc08",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc12",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc16",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc20",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc24",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc28",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc32",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc36",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    },
+    {
+     "id": "tc38",
+     "task": "announcement",
+     "why": [
+      "body has 26 words, limit 25"
+     ]
+    },
+    {
+     "id": "tc40",
+     "task": "content_pack",
+     "why": [
+      "expected exactly 4 hashtags, got 3"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "v2 + mock-small",
+   "prompt_version": "v2",
+   "model": "mock-small",
+   "cases": 50,
+   "schema_valid_raw": 0.837,
+   "schema_valid_final": 0.959,
+   "instruction_following": 0.979,
+   "pass_rate": 0.98,
+   "latency_mean_s": 0.681,
+   "latency_p95_s": 0.928,
+   "tokens": 12709,
+   "cost_usd": 0.00392,
+   "retry_rate": 0.04,
+   "fallback_rate": 0.0,
+   "failures": [
+    {
+     "id": "tc45",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s)"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "v2 + mock-large",
+   "prompt_version": "v2",
+   "model": "mock-large",
+   "cases": 50,
+   "schema_valid_raw": 0.939,
+   "schema_valid_final": 0.98,
+   "instruction_following": 1.0,
+   "pass_rate": 1.0,
+   "latency_mean_s": 2.063,
+   "latency_p95_s": 2.784,
+   "tokens": 12874,
+   "cost_usd": 0.0797,
+   "retry_rate": 0.04,
+   "fallback_rate": 0.0,
+   "failures": []
+  },
+  {
+   "label": "v2 + router (fallback on)",
+   "prompt_version": "v2",
+   "model": "router(balanced)+fallback",
+   "cases": 50,
+   "schema_valid_raw": 0.857,
+   "schema_valid_final": 0.98,
+   "instruction_following": 1.0,
+   "pass_rate": 1.0,
+   "latency_mean_s": 1.092,
+   "latency_p95_s": 2.484,
+   "tokens": 12927,
+   "cost_usd": 0.02764,
+   "retry_rate": 0.04,
+   "fallback_rate": 0.02,
+   "failures": []
+  }
+ ],
+ "cheaper_model": [
+  {
+   "task": "announcement",
+   "small_pass": 1.0,
+   "large_pass": 1.0,
+   "small_cost": 0.00076,
+   "large_cost": 0.01478,
+   "verdict": "small model is enough",
+   "small_failed": []
+  },
+  {
+   "task": "content_pack",
+   "small_pass": 1.0,
+   "large_pass": 1.0,
+   "small_cost": 0.00114,
+   "large_cost": 0.02377,
+   "verdict": "small model is enough",
+   "small_failed": []
+  },
+  {
+   "task": "schedule",
+   "small_pass": 0.929,
+   "large_pass": 1.0,
+   "small_cost": 0.00122,
+   "large_cost": 0.02563,
+   "verdict": "small model is NOT enough",
+   "small_failed": [
+    "tc45"
+   ]
+  },
+  {
+   "task": "task_list",
+   "small_pass": 1.0,
+   "large_pass": 1.0,
+   "small_cost": 0.0008,
+   "large_cost": 0.01552,
+   "verdict": "small model is enough",
+   "small_failed": []
+  }
+ ],
+ "rows": {
+  "v1 + mock-small": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.712,
+    "tokens": 125,
+    "cost_usd": 5.6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.596,
+    "tokens": 104,
+    "cost_usd": 4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 76,
+    "cost_usd": 3.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": false,
+    "latency_s": 1.452,
+    "tokens": 291,
+    "cost_usd": 0.000123,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.796,
+    "tokens": 149,
+    "cost_usd": 6.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.612,
+    "tokens": 112,
+    "cost_usd": 4.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.96,
+    "tokens": 136,
+    "cost_usd": 4.3e-05,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 0.776,
+    "tokens": 151,
+    "cost_usd": 6.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.812,
+    "tokens": 160,
+    "cost_usd": 7.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.64,
+    "tokens": 126,
+    "cost_usd": 4.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 99,
+    "cost_usd": 4.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 0.836,
+    "tokens": 173,
+    "cost_usd": 7.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.732,
+    "tokens": 132,
+    "cost_usd": 6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.604,
+    "tokens": 109,
+    "cost_usd": 4.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.576,
+    "tokens": 81,
+    "cost_usd": 3.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 0.772,
+    "tokens": 149,
+    "cost_usd": 6.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.728,
+    "tokens": 129,
+    "cost_usd": 5.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.612,
+    "tokens": 108,
+    "cost_usd": 4.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 79,
+    "cost_usd": 3.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": false,
+    "latency_s": 1.448,
+    "tokens": 290,
+    "cost_usd": 0.000123,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.784,
+    "tokens": 150,
+    "cost_usd": 6.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.628,
+    "tokens": 119,
+    "cost_usd": 4.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 81,
+    "cost_usd": 3.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 0.812,
+    "tokens": 164,
+    "cost_usd": 7.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.788,
+    "tokens": 152,
+    "cost_usd": 6.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 121,
+    "cost_usd": 4.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.572,
+    "tokens": 83,
+    "cost_usd": 3.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": false,
+    "latency_s": 1.584,
+    "tokens": 340,
+    "cost_usd": 0.000146,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.72,
+    "tokens": 128,
+    "cost_usd": 5.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.604,
+    "tokens": 108,
+    "cost_usd": 4.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.56,
+    "tokens": 77,
+    "cost_usd": 3.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 0.764,
+    "tokens": 146,
+    "cost_usd": 6.6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.82,
+    "tokens": 160,
+    "cost_usd": 7.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 1.216,
+    "tokens": 252,
+    "cost_usd": 9.2e-05,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.624,
+    "tokens": 96,
+    "cost_usd": 4.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 0.812,
+    "tokens": 165,
+    "cost_usd": 7.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.928,
+    "tokens": 205,
+    "cost_usd": 9.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "body has 26 words, limit 25"
+    ],
+    "raw_valid": false,
+    "latency_s": 1.36,
+    "tokens": 324,
+    "cost_usd": 0.000121,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.636,
+    "tokens": 107,
+    "cost_usd": 4.5e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 0.964,
+    "tokens": 221,
+    "cost_usd": 0.000101,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 1.016,
+    "tokens": 137,
+    "cost_usd": 4.9e-05,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 1.092,
+    "tokens": 175,
+    "cost_usd": 6.4e-05,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.6,
+    "tokens": 102,
+    "cost_usd": 4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.728,
+    "tokens": 129,
+    "cost_usd": 5.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s)"
+    ],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s",
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s",
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.588,
+    "tokens": 82,
+    "cost_usd": 3.5e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.572,
+    "tokens": 76,
+    "cost_usd": 3.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.704,
+    "tokens": 112,
+    "cost_usd": 5.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   }
+  ],
+  "v1 + mock-large": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.136,
+    "tokens": 125,
+    "cost_usd": 0.001311,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.788,
+    "tokens": 104,
+    "cost_usd": 0.0009,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.692,
+    "tokens": 76,
+    "cost_usd": 0.00072,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.244,
+    "tokens": 141,
+    "cost_usd": 0.001467,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.172,
+    "tokens": 131,
+    "cost_usd": 0.001365,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.836,
+    "tokens": 112,
+    "cost_usd": 0.000972,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.668,
+    "tokens": 77,
+    "cost_usd": 0.000699,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.328,
+    "tokens": 151,
+    "cost_usd": 0.001581,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.436,
+    "tokens": 160,
+    "cost_usd": 0.001716,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.92,
+    "tokens": 126,
+    "cost_usd": 0.001098,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.896,
+    "tokens": 99,
+    "cost_usd": 0.000993,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.508,
+    "tokens": 173,
+    "cost_usd": 0.001827,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.16,
+    "tokens": 129,
+    "cost_usd": 0.001347,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.812,
+    "tokens": 109,
+    "cost_usd": 0.000939,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.692,
+    "tokens": 78,
+    "cost_usd": 0.000726,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.316,
+    "tokens": 149,
+    "cost_usd": 0.001563,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.148,
+    "tokens": 126,
+    "cost_usd": 0.001326,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.8,
+    "tokens": 105,
+    "cost_usd": 0.000915,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.692,
+    "tokens": 79,
+    "cost_usd": 0.000729,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.244,
+    "tokens": 141,
+    "cost_usd": 0.001467,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.316,
+    "tokens": 147,
+    "cost_usd": 0.001557,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.884,
+    "tokens": 119,
+    "cost_usd": 0.001041,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.692,
+    "tokens": 81,
+    "cost_usd": 0.000735,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.436,
+    "tokens": 164,
+    "cost_usd": 0.001728,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.328,
+    "tokens": 149,
+    "cost_usd": 0.001575,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.896,
+    "tokens": 121,
+    "cost_usd": 0.001059,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.716,
+    "tokens": 83,
+    "cost_usd": 0.000765,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.448,
+    "tokens": 166,
+    "cost_usd": 0.001746,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.16,
+    "tokens": 128,
+    "cost_usd": 0.001344,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.812,
+    "tokens": 108,
+    "cost_usd": 0.000936,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.68,
+    "tokens": 77,
+    "cost_usd": 0.000711,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.292,
+    "tokens": 146,
+    "cost_usd": 0.00153,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.424,
+    "tokens": 157,
+    "cost_usd": 0.001695,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.896,
+    "tokens": 121,
+    "cost_usd": 0.001059,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.872,
+    "tokens": 96,
+    "cost_usd": 0.00096,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.436,
+    "tokens": 165,
+    "cost_usd": 0.001731,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.784,
+    "tokens": 205,
+    "cost_usd": 0.002199,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "body has 26 words, limit 25"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.112,
+    "tokens": 157,
+    "cost_usd": 0.001383,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.908,
+    "tokens": 107,
+    "cost_usd": 0.001029,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected exactly 4 hashtags, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.892,
+    "tokens": 221,
+    "cost_usd": 0.002355,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 3.048,
+    "tokens": 137,
+    "cost_usd": 0.001059,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 3.276,
+    "tokens": 175,
+    "cost_usd": 0.001401,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.764,
+    "tokens": 99,
+    "cost_usd": 0.000861,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.184,
+    "tokens": 129,
+    "cost_usd": 0.001371,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.632,
+    "tokens": 66,
+    "cost_usd": 0.00063,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 1 attempts; last error: timeout on mock-large: mock-large exceeded 10.0s",
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.764,
+    "tokens": 82,
+    "cost_usd": 0.00081,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.716,
+    "tokens": 76,
+    "cost_usd": 0.000744,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.896,
+    "tokens": 94,
+    "cost_usd": 0.000978,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   }
+  ],
+  "v2 + mock-small": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.712,
+    "tokens": 279,
+    "cost_usd": 8.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.596,
+    "tokens": 215,
+    "cost_usd": 6.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 218,
+    "cost_usd": 6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.756,
+    "tokens": 280,
+    "cost_usd": 9.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.796,
+    "tokens": 304,
+    "cost_usd": 0.0001,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.612,
+    "tokens": 222,
+    "cost_usd": 6.6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.556,
+    "tokens": 219,
+    "cost_usd": 5.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.792,
+    "tokens": 292,
+    "cost_usd": 9.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.812,
+    "tokens": 315,
+    "cost_usd": 0.000104,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.64,
+    "tokens": 236,
+    "cost_usd": 7.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 241,
+    "cost_usd": 7.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.844,
+    "tokens": 313,
+    "cost_usd": 0.000107,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.72,
+    "tokens": 284,
+    "cost_usd": 8.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.676,
+    "tokens": 237,
+    "cost_usd": 7.5e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.632,
+    "tokens": 237,
+    "cost_usd": 7.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.792,
+    "tokens": 291,
+    "cost_usd": 9.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.716,
+    "tokens": 280,
+    "cost_usd": 8.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.6,
+    "tokens": 216,
+    "cost_usd": 6.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 221,
+    "cost_usd": 6.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.764,
+    "tokens": 282,
+    "cost_usd": 9.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.772,
+    "tokens": 301,
+    "cost_usd": 9.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.628,
+    "tokens": 230,
+    "cost_usd": 6.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 223,
+    "cost_usd": 6.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.824,
+    "tokens": 304,
+    "cost_usd": 0.000103,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.776,
+    "tokens": 303,
+    "cost_usd": 9.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 232,
+    "cost_usd": 7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.572,
+    "tokens": 224,
+    "cost_usd": 6.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.828,
+    "tokens": 306,
+    "cost_usd": 0.000104,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.72,
+    "tokens": 283,
+    "cost_usd": 8.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.604,
+    "tokens": 218,
+    "cost_usd": 6.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.56,
+    "tokens": 219,
+    "cost_usd": 6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.776,
+    "tokens": 287,
+    "cost_usd": 9.5e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.808,
+    "tokens": 311,
+    "cost_usd": 0.000103,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 232,
+    "cost_usd": 7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.624,
+    "tokens": 238,
+    "cost_usd": 7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.824,
+    "tokens": 305,
+    "cost_usd": 0.000103,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.928,
+    "tokens": 359,
+    "cost_usd": 0.000125,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.696,
+    "tokens": 266,
+    "cost_usd": 8.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.636,
+    "tokens": 248,
+    "cost_usd": 7.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.976,
+    "tokens": 361,
+    "cost_usd": 0.00013,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 1.016,
+    "tokens": 446,
+    "cost_usd": 0.000111,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 1.092,
+    "tokens": 449,
+    "cost_usd": 0.000119,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.588,
+    "tokens": 210,
+    "cost_usd": 6.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.728,
+    "tokens": 270,
+    "cost_usd": 8.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s)"
+    ],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s",
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s",
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.588,
+    "tokens": 237,
+    "cost_usd": 6.6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.572,
+    "tokens": 230,
+    "cost_usd": 6.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 235,
+    "cost_usd": 7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   }
+  ],
+  "v2 + mock-large": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.136,
+    "tokens": 279,
+    "cost_usd": 0.001773,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.788,
+    "tokens": 215,
+    "cost_usd": 0.001233,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.692,
+    "tokens": 218,
+    "cost_usd": 0.001146,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.268,
+    "tokens": 280,
+    "cost_usd": 0.001908,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.172,
+    "tokens": 286,
+    "cost_usd": 0.00183,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.836,
+    "tokens": 222,
+    "cost_usd": 0.001302,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.668,
+    "tokens": 219,
+    "cost_usd": 0.001125,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.376,
+    "tokens": 292,
+    "cost_usd": 0.002052,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.436,
+    "tokens": 315,
+    "cost_usd": 0.002181,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.92,
+    "tokens": 236,
+    "cost_usd": 0.001428,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.896,
+    "tokens": 241,
+    "cost_usd": 0.001419,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.532,
+    "tokens": 313,
+    "cost_usd": 0.002271,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.16,
+    "tokens": 284,
+    "cost_usd": 0.001812,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.812,
+    "tokens": 219,
+    "cost_usd": 0.001269,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.692,
+    "tokens": 220,
+    "cost_usd": 0.001152,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.34,
+    "tokens": 288,
+    "cost_usd": 0.002004,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.148,
+    "tokens": 280,
+    "cost_usd": 0.001788,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.8,
+    "tokens": 216,
+    "cost_usd": 0.001248,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.692,
+    "tokens": 221,
+    "cost_usd": 0.001155,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.292,
+    "tokens": 282,
+    "cost_usd": 0.001938,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.316,
+    "tokens": 301,
+    "cost_usd": 0.002019,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.884,
+    "tokens": 230,
+    "cost_usd": 0.001374,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.692,
+    "tokens": 223,
+    "cost_usd": 0.001161,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.472,
+    "tokens": 304,
+    "cost_usd": 0.002184,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.328,
+    "tokens": 303,
+    "cost_usd": 0.002037,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.896,
+    "tokens": 232,
+    "cost_usd": 0.001392,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.716,
+    "tokens": 224,
+    "cost_usd": 0.001188,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.484,
+    "tokens": 306,
+    "cost_usd": 0.002202,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.16,
+    "tokens": 283,
+    "cost_usd": 0.001809,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.812,
+    "tokens": 218,
+    "cost_usd": 0.001266,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.68,
+    "tokens": 219,
+    "cost_usd": 0.001137,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.328,
+    "tokens": 287,
+    "cost_usd": 0.001989,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.424,
+    "tokens": 311,
+    "cost_usd": 0.002157,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.896,
+    "tokens": 232,
+    "cost_usd": 0.001392,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.872,
+    "tokens": 238,
+    "cost_usd": 0.001386,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.472,
+    "tokens": 305,
+    "cost_usd": 0.002187,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.784,
+    "tokens": 359,
+    "cost_usd": 0.002661,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.088,
+    "tokens": 266,
+    "cost_usd": 0.001686,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.908,
+    "tokens": 248,
+    "cost_usd": 0.001452,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.928,
+    "tokens": 361,
+    "cost_usd": 0.002811,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 3.048,
+    "tokens": 446,
+    "cost_usd": 0.001986,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 3.276,
+    "tokens": 449,
+    "cost_usd": 0.002223,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.764,
+    "tokens": 210,
+    "cost_usd": 0.001194,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.184,
+    "tokens": 270,
+    "cost_usd": 0.001794,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.632,
+    "tokens": 221,
+    "cost_usd": 0.001095,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 1 attempts; last error: timeout on mock-large: mock-large exceeded 10.0s",
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.764,
+    "tokens": 237,
+    "cost_usd": 0.001275,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.716,
+    "tokens": 230,
+    "cost_usd": 0.001206,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 1.896,
+    "tokens": 235,
+    "cost_usd": 0.001401,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   }
+  ],
+  "v2 + router (fallback on)": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.712,
+    "tokens": 279,
+    "cost_usd": 8.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.596,
+    "tokens": 215,
+    "cost_usd": 6.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 218,
+    "cost_usd": 6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.268,
+    "tokens": 280,
+    "cost_usd": 0.001908,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.796,
+    "tokens": 304,
+    "cost_usd": 0.0001,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.612,
+    "tokens": 222,
+    "cost_usd": 6.6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.556,
+    "tokens": 219,
+    "cost_usd": 5.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.376,
+    "tokens": 292,
+    "cost_usd": 0.002052,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.812,
+    "tokens": 315,
+    "cost_usd": 0.000104,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.64,
+    "tokens": 236,
+    "cost_usd": 7.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 241,
+    "cost_usd": 7.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.532,
+    "tokens": 313,
+    "cost_usd": 0.002271,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.72,
+    "tokens": 284,
+    "cost_usd": 8.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.676,
+    "tokens": 237,
+    "cost_usd": 7.5e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.632,
+    "tokens": 237,
+    "cost_usd": 7.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.34,
+    "tokens": 288,
+    "cost_usd": 0.002004,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.716,
+    "tokens": 280,
+    "cost_usd": 8.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.6,
+    "tokens": 216,
+    "cost_usd": 6.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 221,
+    "cost_usd": 6.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.292,
+    "tokens": 282,
+    "cost_usd": 0.001938,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.772,
+    "tokens": 301,
+    "cost_usd": 9.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.628,
+    "tokens": 230,
+    "cost_usd": 6.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.564,
+    "tokens": 223,
+    "cost_usd": 6.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.472,
+    "tokens": 304,
+    "cost_usd": 0.002184,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.776,
+    "tokens": 303,
+    "cost_usd": 9.8e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 232,
+    "cost_usd": 7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.572,
+    "tokens": 224,
+    "cost_usd": 6.2e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.484,
+    "tokens": 306,
+    "cost_usd": 0.002202,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.72,
+    "tokens": 283,
+    "cost_usd": 8.9e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.604,
+    "tokens": 218,
+    "cost_usd": 6.4e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.56,
+    "tokens": 219,
+    "cost_usd": 6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.328,
+    "tokens": 287,
+    "cost_usd": 0.001989,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.808,
+    "tokens": 311,
+    "cost_usd": 0.000103,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 232,
+    "cost_usd": 7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.624,
+    "tokens": 238,
+    "cost_usd": 7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.472,
+    "tokens": 305,
+    "cost_usd": 0.002187,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.928,
+    "tokens": 359,
+    "cost_usd": 0.000125,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.696,
+    "tokens": 266,
+    "cost_usd": 8.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.636,
+    "tokens": 248,
+    "cost_usd": 7.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.928,
+    "tokens": 361,
+    "cost_usd": 0.002811,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 1.016,
+    "tokens": 446,
+    "cost_usd": 0.000111,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 3.276,
+    "tokens": 449,
+    "cost_usd": 0.002223,
+    "retried": true,
+    "fallback": false,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.588,
+    "tokens": 210,
+    "cost_usd": 6.1e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.728,
+    "tokens": 270,
+    "cost_usd": 8.7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 1.632,
+    "tokens": 221,
+    "cost_usd": 0.001095,
+    "retried": false,
+    "fallback": true,
+    "model": "mock-large",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 2 attempts; last error: timeout on mock-large: mock-large exceeded 10.0s",
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.588,
+    "tokens": 237,
+    "cost_usd": 6.6e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.572,
+    "tokens": 230,
+    "cost_usd": 6.3e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 0.632,
+    "tokens": 235,
+    "cost_usd": 7e-05,
+    "retried": false,
+    "fallback": false,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,761 @@
+[
+ {
+  "id": "tc01",
+  "task": "schedule",
+  "input": "Team offsite in Pune on 3 March. kickoff at 10am. lunch at 1pm. demo at 3:30pm. Priya books venue. Rahul sends invites by Friday.",
+  "expect": {
+   "must_contain": [
+    "Pune"
+   ],
+   "min_items": 5
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc02",
+  "task": "announcement",
+  "input": "Team offsite in Pune on 3 March. kickoff at 10am. lunch at 1pm. demo at 3:30pm. Priya books venue. Rahul sends invites by Friday. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Pune"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc03",
+  "task": "task_list",
+  "input": "Team offsite in Pune on 3 March. Priya books venue. Rahul sends invites by Friday.",
+  "expect": {
+   "must_contain": [
+    "venue"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc04",
+  "task": "content_pack",
+  "input": "Team offsite in Pune on 3 March. kickoff at 10am. lunch at 1pm. demo at 3:30pm. Priya books venue. Rahul sends invites by Friday. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Pune"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc05",
+  "task": "schedule",
+  "input": "Product launch party at Jamshedpur on 12 June. doors open 6pm. keynote at 7pm. dinner at 8:30pm. Asha orders cake urgent. Dev prepares slides.",
+  "expect": {
+   "must_contain": [
+    "Jamshedpur"
+   ],
+   "min_items": 5
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc06",
+  "task": "announcement",
+  "input": "Product launch party at Jamshedpur on 12 June. doors open 6pm. keynote at 7pm. dinner at 8:30pm. Asha orders cake urgent. Dev prepares slides. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Jamshedpur"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc07",
+  "task": "task_list",
+  "input": "Product launch party at Jamshedpur on 12 June. Asha orders cake urgent. Dev prepares slides.",
+  "expect": {
+   "must_contain": [
+    "cake"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc08",
+  "task": "content_pack",
+  "input": "Product launch party at Jamshedpur on 12 June. doors open 6pm. keynote at 7pm. dinner at 8:30pm. Asha orders cake urgent. Dev prepares slides. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Jamshedpur"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc09",
+  "task": "schedule",
+  "input": "Hackathon at IIT Delhi on 21 April. registration 9am. coding starts 10am. judging 5pm. awards 6:30pm. Meera arranges wifi asap. Karan collects laptops. Isha prints badges.",
+  "expect": {
+   "must_contain": [
+    "Delhi"
+   ],
+   "min_items": 7
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc10",
+  "task": "announcement",
+  "input": "Hackathon at IIT Delhi on 21 April. registration 9am. coding starts 10am. judging 5pm. awards 6:30pm. Meera arranges wifi asap. Karan collects laptops. Isha prints badges. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Delhi"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc11",
+  "task": "task_list",
+  "input": "Hackathon at IIT Delhi on 21 April. Meera arranges wifi asap. Karan collects laptops. Isha prints badges.",
+  "expect": {
+   "must_contain": [
+    "wifi"
+   ],
+   "min_items": 3
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc12",
+  "task": "content_pack",
+  "input": "Hackathon at IIT Delhi on 21 April. registration 9am. coding starts 10am. judging 5pm. awards 6:30pm. Meera arranges wifi asap. Karan collects laptops. Isha prints badges. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Delhi"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc13",
+  "task": "schedule",
+  "input": "Quarterly review in Mumbai on 5 July. welcome 9:30am. metrics review 10am. roadmap 2pm. Nikhil updates dashboard critical. Sana books cab.",
+  "expect": {
+   "must_contain": [
+    "Mumbai"
+   ],
+   "min_items": 5
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc14",
+  "task": "announcement",
+  "input": "Quarterly review in Mumbai on 5 July. welcome 9:30am. metrics review 10am. roadmap 2pm. Nikhil updates dashboard critical. Sana books cab. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Mumbai"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc15",
+  "task": "task_list",
+  "input": "Quarterly review in Mumbai on 5 July. Nikhil updates dashboard critical. Sana books cab.",
+  "expect": {
+   "must_contain": [
+    "dashboard"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc16",
+  "task": "content_pack",
+  "input": "Quarterly review in Mumbai on 5 July. welcome 9:30am. metrics review 10am. roadmap 2pm. Nikhil updates dashboard critical. Sana books cab. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Mumbai"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc17",
+  "task": "schedule",
+  "input": "Diwali potluck in Ranchi on 1 November. setup 4pm. puja 6pm. dinner 7:30pm. Tara brings sweets. Vikram arranges lights optional.",
+  "expect": {
+   "must_contain": [
+    "Ranchi"
+   ],
+   "min_items": 5
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc18",
+  "task": "announcement",
+  "input": "Diwali potluck in Ranchi on 1 November. setup 4pm. puja 6pm. dinner 7:30pm. Tara brings sweets. Vikram arranges lights optional. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Ranchi"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc19",
+  "task": "task_list",
+  "input": "Diwali potluck in Ranchi on 1 November. Tara brings sweets. Vikram arranges lights optional.",
+  "expect": {
+   "must_contain": [
+    "sweets"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc20",
+  "task": "content_pack",
+  "input": "Diwali potluck in Ranchi on 1 November. setup 4pm. puja 6pm. dinner 7:30pm. Tara brings sweets. Vikram arranges lights optional. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Ranchi"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc21",
+  "task": "schedule",
+  "input": "Customer workshop in Bengaluru on 18 September. intro 11am. hands-on lab 12pm. lunch 1:30pm. Q&A 3pm. Lena sends agenda. Omar tests demo environment urgent.",
+  "expect": {
+   "must_contain": [
+    "Bengaluru"
+   ],
+   "min_items": 6
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc22",
+  "task": "announcement",
+  "input": "Customer workshop in Bengaluru on 18 September. intro 11am. hands-on lab 12pm. lunch 1:30pm. Q&A 3pm. Lena sends agenda. Omar tests demo environment urgent. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Bengaluru"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc23",
+  "task": "task_list",
+  "input": "Customer workshop in Bengaluru on 18 September. Lena sends agenda. Omar tests demo environment urgent.",
+  "expect": {
+   "must_contain": [
+    "demo"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc24",
+  "task": "content_pack",
+  "input": "Customer workshop in Bengaluru on 18 September. intro 11am. hands-on lab 12pm. lunch 1:30pm. Q&A 3pm. Lena sends agenda. Omar tests demo environment urgent. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Bengaluru"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc25",
+  "task": "schedule",
+  "input": "Annual sports day in Kolkata on 9 December. march past 8am. relay 9am. tug of war 11am. prize giving 1pm. Rohan marks the track. Pooja orders trophies by Monday.",
+  "expect": {
+   "must_contain": [
+    "Kolkata"
+   ],
+   "min_items": 6
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc26",
+  "task": "announcement",
+  "input": "Annual sports day in Kolkata on 9 December. march past 8am. relay 9am. tug of war 11am. prize giving 1pm. Rohan marks the track. Pooja orders trophies by Monday. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Kolkata"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc27",
+  "task": "task_list",
+  "input": "Annual sports day in Kolkata on 9 December. Rohan marks the track. Pooja orders trophies by Monday.",
+  "expect": {
+   "must_contain": [
+    "trophies"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc28",
+  "task": "content_pack",
+  "input": "Annual sports day in Kolkata on 9 December. march past 8am. relay 9am. tug of war 11am. prize giving 1pm. Rohan marks the track. Pooja orders trophies by Monday. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Kolkata"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc29",
+  "task": "schedule",
+  "input": "Board meeting in Chennai on 30 August. coffee 9am. financials 9:30am. strategy 11am. Gita circulates minutes. Arun books room deadline.",
+  "expect": {
+   "must_contain": [
+    "Chennai"
+   ],
+   "min_items": 5
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc30",
+  "task": "announcement",
+  "input": "Board meeting in Chennai on 30 August. coffee 9am. financials 9:30am. strategy 11am. Gita circulates minutes. Arun books room deadline. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Chennai"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc31",
+  "task": "task_list",
+  "input": "Board meeting in Chennai on 30 August. Gita circulates minutes. Arun books room deadline.",
+  "expect": {
+   "must_contain": [
+    "minutes"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc32",
+  "task": "content_pack",
+  "input": "Board meeting in Chennai on 30 August. coffee 9am. financials 9:30am. strategy 11am. Gita circulates minutes. Arun books room deadline. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Chennai"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc33",
+  "task": "schedule",
+  "input": "Open mic night in Goa on 14 February. sound check 5pm. doors 7pm. first act 7:30pm. headliner 9pm. Zoya hires sound crew. Ben designs posters. Uma sells tickets.",
+  "expect": {
+   "must_contain": [
+    "Goa"
+   ],
+   "min_items": 7
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc34",
+  "task": "announcement",
+  "input": "Open mic night in Goa on 14 February. sound check 5pm. doors 7pm. first act 7:30pm. headliner 9pm. Zoya hires sound crew. Ben designs posters. Uma sells tickets. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Goa"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc35",
+  "task": "task_list",
+  "input": "Open mic night in Goa on 14 February. Zoya hires sound crew. Ben designs posters. Uma sells tickets.",
+  "expect": {
+   "must_contain": [
+    "posters"
+   ],
+   "min_items": 3
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc36",
+  "task": "content_pack",
+  "input": "Open mic night in Goa on 14 February. sound check 5pm. doors 7pm. first act 7:30pm. headliner 9pm. Zoya hires sound crew. Ben designs posters. Uma sells tickets. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Goa"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc37",
+  "task": "schedule",
+  "input": "Onboarding day for new interns in Hyderabad on 2 January. welcome 10am. HR session 11am. tools setup 12pm. team lunch 1pm. mentor pairing 3pm. wrap-up 4:30pm. Farah prepares laptops asap. Gaurav schedules mentors. Hema orders lunch.",
+  "expect": {
+   "must_contain": [
+    "Hyderabad"
+   ],
+   "min_items": 9
+  },
+  "tags": [
+   "happy",
+   "schedule"
+  ]
+ },
+ {
+  "id": "tc38",
+  "task": "announcement",
+  "input": "Onboarding day for new interns in Hyderabad on 2 January. welcome 10am. HR session 11am. tools setup 12pm. team lunch 1pm. mentor pairing 3pm. wrap-up 4:30pm. Farah prepares laptops asap. Gaurav schedules mentors. Hema orders lunch. Keep the body under 25 words.",
+  "expect": {
+   "must_contain": [
+    "Hyderabad"
+   ],
+   "max_body_words": 25
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc39",
+  "task": "task_list",
+  "input": "Onboarding day for new interns in Hyderabad on 2 January. Farah prepares laptops asap. Gaurav schedules mentors. Hema orders lunch.",
+  "expect": {
+   "must_contain": [
+    "laptops"
+   ],
+   "min_items": 3
+  },
+  "tags": [
+   "happy",
+   "task_list"
+  ]
+ },
+ {
+  "id": "tc40",
+  "task": "content_pack",
+  "input": "Onboarding day for new interns in Hyderabad on 2 January. welcome 10am. HR session 11am. tools setup 12pm. team lunch 1pm. mentor pairing 3pm. wrap-up 4:30pm. Farah prepares laptops asap. Gaurav schedules mentors. Hema orders lunch. Use exactly 4 hashtags.",
+  "expect": {
+   "must_contain": [
+    "Hyderabad"
+   ],
+   "hashtags": 4,
+   "tweet_max": 280
+  },
+  "tags": [
+   "happy",
+   "constraint"
+  ]
+ },
+ {
+  "id": "tc41",
+  "task": "schedule",
+  "input": "Design review on 4 May. kickoff 10am. [[MALFORMED]] wrap-up 11am.",
+  "expect": {
+   "must_contain": [
+    "design"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "edge",
+   "malformed_json"
+  ]
+ },
+ {
+  "id": "tc42",
+  "task": "content_pack",
+  "input": "Launch webinar on 8 August. Demo at 4pm. Q&A at 5pm. Use exactly 3 hashtags. [[MALFORMED]]",
+  "expect": {
+   "hashtags": 3,
+   "must_contain": [
+    "webinar"
+   ]
+  },
+  "tags": [
+   "edge",
+   "malformed_json"
+  ]
+ },
+ {
+  "id": "tc43",
+  "task": "announcement",
+  "input": "Office move to Salt Lake on 1 October. Packing starts Monday. Write a short announcement. Make it long and detailed. Keep the body under 20 words.",
+  "expect": {
+   "must_contain": [
+    "salt lake"
+   ],
+   "max_body_words": 20,
+   "warning": "contradict"
+  },
+  "tags": [
+   "edge",
+   "contradictory"
+  ]
+ },
+ {
+  "id": "tc44",
+  "task": "task_list",
+  "input": "Annual audit in Noida. Be brief. Give a comprehensive and detailed breakdown. Sam collects invoices urgent. Lia books auditors.",
+  "expect": {
+   "must_contain": [
+    "invoices"
+   ],
+   "warning": "contradict"
+  },
+  "tags": [
+   "edge",
+   "contradictory"
+  ]
+ },
+ {
+  "id": "tc45",
+  "task": "schedule",
+  "input": "Retro in Pune on 6 June. standup 9am. [[TIMEOUT]] review 11am.",
+  "expect": {
+   "must_contain": [
+    "pune"
+   ]
+  },
+  "tags": [
+   "edge",
+   "timeout_fallback"
+  ]
+ },
+ {
+  "id": "tc46",
+  "task": "announcement",
+  "input": "Server maintenance on 3 March. [[TIMEOUT_ALL]] Downtime 2am to 4am.",
+  "expect": {
+   "ok": false,
+   "error_contains": "timeout"
+  },
+  "tags": [
+   "edge",
+   "timeout_all"
+  ]
+ },
+ {
+  "id": "tc47",
+  "task": "schedule",
+  "input": "Webinar in Jaipur on 7 July. intro 3pm. demo 3:30pm. wrap-up 4:30pm. [[INTERRUPT]]",
+  "expect": {
+   "must_contain": [
+    "jaipur"
+   ],
+   "min_items": 3,
+   "warning": "interrupted"
+  },
+  "tags": [
+   "edge",
+   "interrupted_stream"
+  ],
+  "stream": true
+ },
+ {
+  "id": "tc48",
+  "task": "schedule",
+  "input": "Diwali मेला at Jamshedpur on 12 November. Stalls open 5pm. Music at 7pm.",
+  "expect": {
+   "must_contain": [
+    "jamshedpur",
+    "मेला"
+   ],
+   "min_items": 2
+  },
+  "tags": [
+   "edge",
+   "unicode"
+  ]
+ },
+ {
+  "id": "tc49",
+  "task": "task_list",
+  "input": "   ",
+  "expect": {
+   "ok": false,
+   "error_contains": "empty"
+  },
+  "tags": [
+   "edge",
+   "empty_input"
+  ]
+ },
+ {
+  "id": "tc50",
+  "task": "task_list",
+  "input": "- Standup 9am\n- Ravi fixes login bug asap\n- Mia writes release notes\n- Retro at 4pm",
+  "expect": {
+   "must_contain": [
+    "login"
+   ],
+   "min_items": 3
+  },
+  "tags": [
+   "edge",
+   "noisy_bullets"
+  ]
+ }
+]
