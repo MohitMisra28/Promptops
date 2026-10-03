@@ -1,0 +1,25 @@
+{
+  "active": "v2",
+  "versions": [
+    {
+      "version": "v1",
+      "template": "TASK: {{task}}\nConvert the following text into JSON.\nINPUT:\n{{input}}",
+      "metadata": {
+        "owner": "platform",
+        "style": "naive"
+      },
+      "changelog": "Baseline: bare instruction, no schema in prompt.",
+      "created": "2026-10-03T04:19:32+00:00"
+    },
+    {
+      "version": "v2",
+      "template": "TASK: {{task}}\nYou are a precise structured-data generator.\nReturn ONLY valid JSON matching this JSON Schema, with no markdown fences and no commentary:\n{{schema}}\nRespect every constraint in the input (word limits, counts, lengths) exactly.\nINPUT:\n{{input}}",
+      "metadata": {
+        "owner": "platform",
+        "style": "strict"
+      },
+      "changelog": "Embed JSON schema, forbid fences/commentary, require constraint compliance.",
+      "created": "2026-10-03T04:19:32+00:00"
+    }
+  ]
+}
