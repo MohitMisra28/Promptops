@@ -10,8 +10,8 @@ Everything is free: Python + FastAPI, a deterministic mock backend, and an optio
 python -m venv .venv && source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python scripts/seed_prompts.py                           # only needed if prompts/ is empty (it ships seeded)
-python -m pytest -q                                      # 25 tests incl. the regression gate
-python -m promptops.regression                           # 5 configs x 50 cases -> results/report.md + report.json
+python -m pytest -q                                      # 26 tests incl. the regression gate
+python -m promptops.regression                           # 5 configs(9configs with Ollama enabled) x 50 cases -> results/report.md + report.json
 uvicorn app:app --reload                                 # experiment UI at http://localhost:8000
 ```
 
@@ -38,21 +38,33 @@ Free deployment: `render.yaml` + `Dockerfile` deploy to Render's free web tier (
 
 ## Results (from `results/report.md`, 50 cases)
 
-| config | schema valid first try | valid final | instruction following | cost USD |
-|---|---|---|---|---|
-| v1 + small | 59% | 96% | 75% | 0.0029 |
-| v1 + large | 94% | 98% | 77% | 0.0587 |
-| v2 + small | 84% | 96% | 98% | 0.0039 |
-| v2 + large | 94% | 98% | 100% | 0.0797 |
-| v2 + router + fallback | 86% | 98% | 100% | 0.0276 |
+| config | valid first try | valid final | instruction following | pass rate | mean latency s | p95 s | cost USD |
+|---|---|---|---|---|---|---|---|
+| v1 + mock-small | 57% | 96% | 75% | 76% | 0.767 | 1.36 | 0.00289 |
+| v1 + mock-large | 94% | 98% | 77% | 78% | 2.057 | 2.784 | 0.05869 |
+| v2 + mock-small | 84% | 96% | 98% | 98% | 0.681 | 0.928 | 0.00392 |
+| v2 + mock-large | 94% | 98% | 100% | 100% | 2.063 | 2.784 | 0.07973 |
+| v2 + router (fallback on, Llama in pool) | 84% | 100% | 75% | 74% | 3.547 | 5.96 | 0.02391 |
+| v1 + llama3.2:3b (real) | 0% | 0% | 0% | 4% | 9.434 | 11.803 | 0 |
+| v2 + llama3.2:3b (real) | 90% | 96% | 69% | 68% | 3.645 | 6.753 | 0 |
+| v3 + llama3.2:3b (real) | 90% | 100% | 65% | 64% | 3.499 | 6.305 | 0 |
+| v4 + llama3.2:3b (real) | 82% | 94% | 69% | 68% | 3.658 | 6.629 | 0 |
 
-Prompt v2 lifts the small model's instruction following from 75% to 98%, and the router matches the large model's quality at about a third of the cost.
-Small is enough for announcement, task_list and content_pack but not for schedule (its timeout case needs the fallback).
-"Valid final" is below 100% because two cases are *meant* to fail cleanly (all-model timeout, empty input) and one needs fallback when fallback is off.
+Mock latency is simulated and mock prices are hypothetical. Llama latency is measured on my machine and its cost is $0 (local).
 
+**Findings**
+- **The schema in the prompt decides whether the real model is usable.** Llama with the naive prompt (v1) never produced valid output; it invented its own field names. With the strict prompt (v2), 96% of runs ended valid.
+- **v3 (ambiguity rule) and v4 (one entry per item, copy names exactly) did not beat v2** on Llama (pass rate 64% and 68% vs 68%). The differences are within run-to-run noise, so v2 stays active.
+- **Remaining Llama failures** are dropped schedule items, paraphrased keywords (e.g. "location" instead of "venue"), invalid enum values ("urgent", "no priority specified") and one timeout.
+- **tc46 and tc47 cannot pass with a real model**, because they depend on injected failures that only the mock backends produce.
+- **Router with Llama in the pool:** the router ranks by price, so the free local model goes first on simple tasks. Retries and fallback give 100% final validity, but pass rate falls to 74% because Llama follows constraints less well than the large model. With mock backends only, the router passes at least 98% of cases at lower cost than always using mock-large; `tests/test_regression.py` enforces this.
+- **The v1-to-v2 gains on the mocks are built into the simulation.** They show the measurement works, but they are not evidence about real models.
+- 
 ## Honest limitations
 
 - The two main backends are **mocks**: latency is simulated and prices are hypothetical, so absolute numbers are illustrative; the *mechanisms* (validation, retry, fallback, cost accounting, regression gating) are real and tested.
-- The Ollama adapter was written against Ollama's documented HTTP API but not run in the build sandbox (no Ollama there). Try it locally and log anything odd.
+- Llama 3.2 3B (via Ollama) is the real backend; the two mock models are simulated, so their latency, prices and quality are illustrative. Llama results vary from run to run.
+- The router ranks by price only, so a free but weaker local model is preferred. A per-model quality rating would fix this and is future work.
+- Keyword checks use exact substring matching, which penalises correct paraphrases.
 - Cache is exact-match only; token counts for mocks are estimated (chars/4).
 - Demo video: not included (cannot be recorded here). `docs/DEMO_SCRIPT.md` is a 6-minute shot list.
