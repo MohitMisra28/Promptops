@@ -23,7 +23,7 @@ Claude generated the first version of the repository from the project brief:
 - Added the router rule that sends long inputs to the large model, and the test for it. The test suite went from 25 to 26 tests.
 - Read the regression results and corrected an overclaim: v4 did not beat v2, so v2 stays active.
 - Set up the GitHub repository, committed the work, and resolved a rejected push.
-- [Add anything else you changed or wrote yourself, such as the README findings, the final report and the demo.]
+
 
 ## How the output was checked
 
@@ -31,7 +31,7 @@ Claude generated the first version of the repository from the project brief:
 - The 50-case regression ran on five mock configurations and on four prompt versions with the real model. The results behave as the design predicts: the strict prompt helps, the large mock beats the small one, and the router lowers cost with mock backends only.
 - I read the failures from the real model (see `docs/FAILURE_LOG.md`) and found that the results with Llama were less favourable than with the mocks. I reported them as they are.
 - The server started and served the UI, `/api/models` and `/api/prompts` with HTTP 200.
-- [Edit this line to say what you tried in the UI, for example running two variants side by side.]
+  
 
 ## What was not verified
 
