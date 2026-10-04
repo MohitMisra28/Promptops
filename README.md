@@ -4,6 +4,10 @@ A provider-agnostic platform that turns messy instructions (an event brief) into
 (schedule, announcement, task list, content pack), and makes prompt and model changes **measurable**.
 Everything is free: Python + FastAPI, a deterministic mock backend, and an optional local model through Ollama. No API keys.
 
+**Demo video:** https://drive.google.com/file/d/1_OQfkpmi1nYIq5WqkeXfT9zc2_d960ZC/view?usp=drive_link
+**Live app:** https://promptops-tz1o.onrender.com
+**Note:** the live app uses the mock backends only. The real backend (Llama 3.2 3B via Ollama) runs locally; see the demo video and `results/report.md`.
+
 ## Setup and run (exact commands)
 
 ```bash
