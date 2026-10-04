@@ -6,15 +6,15 @@
    "prompt_version": "v1",
    "model": "mock-small",
    "cases": 50,
-   "schema_valid_raw": 0.592,
+   "schema_valid_raw": 0.571,
    "schema_valid_final": 0.959,
    "instruction_following": 0.75,
    "pass_rate": 0.76,
-   "latency_mean_s": 0.757,
+   "latency_mean_s": 0.767,
    "latency_p95_s": 1.36,
-   "tokens": 6791,
-   "cost_usd": 0.00287,
-   "retry_rate": 0.16,
+   "tokens": 6870,
+   "cost_usd": 0.00289,
+   "retry_rate": 0.18,
    "fallback_rate": 0.0,
    "failures": [
     {
@@ -98,7 +98,7 @@
      "id": "tc45",
      "task": "schedule",
      "why": [
-      "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s)"
+      "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 90.0s)"
      ]
     }
    ]
@@ -112,10 +112,10 @@
    "schema_valid_final": 0.98,
    "instruction_following": 0.771,
    "pass_rate": 0.78,
-   "latency_mean_s": 2.056,
+   "latency_mean_s": 2.057,
    "latency_p95_s": 2.784,
-   "tokens": 5967,
-   "cost_usd": 0.05865,
+   "tokens": 5971,
+   "cost_usd": 0.05869,
    "retry_rate": 0.04,
    "fallback_rate": 0.0,
    "failures": [
@@ -209,7 +209,7 @@
    "pass_rate": 0.98,
    "latency_mean_s": 0.681,
    "latency_p95_s": 0.928,
-   "tokens": 12709,
+   "tokens": 12713,
    "cost_usd": 0.00392,
    "retry_rate": 0.04,
    "fallback_rate": 0.0,
@@ -218,7 +218,7 @@
      "id": "tc45",
      "task": "schedule",
      "why": [
-      "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s)"
+      "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 90.0s)"
      ]
     }
    ]
@@ -234,8 +234,8 @@
    "pass_rate": 1.0,
    "latency_mean_s": 2.063,
    "latency_p95_s": 2.784,
-   "tokens": 12874,
-   "cost_usd": 0.0797,
+   "tokens": 12878,
+   "cost_usd": 0.07973,
    "retry_rate": 0.04,
    "fallback_rate": 0.0,
    "failures": []
@@ -245,17 +245,874 @@
    "prompt_version": "v2",
    "model": "router(balanced)+fallback",
    "cases": 50,
-   "schema_valid_raw": 0.857,
-   "schema_valid_final": 0.98,
-   "instruction_following": 1.0,
-   "pass_rate": 1.0,
-   "latency_mean_s": 1.092,
-   "latency_p95_s": 2.484,
-   "tokens": 12927,
-   "cost_usd": 0.02764,
-   "retry_rate": 0.04,
-   "fallback_rate": 0.02,
-   "failures": []
+   "schema_valid_raw": 0.837,
+   "schema_valid_final": 1.0,
+   "instruction_following": 0.75,
+   "pass_rate": 0.74,
+   "latency_mean_s": 3.547,
+   "latency_p95_s": 5.96,
+   "tokens": 18368,
+   "cost_usd": 0.02391,
+   "retry_rate": 0.16,
+   "fallback_rate": 0.04,
+   "failures": [
+    {
+     "id": "tc01",
+     "task": "schedule",
+     "why": [
+      "expected >= 5 items, got 3"
+     ]
+    },
+    {
+     "id": "tc05",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'Jamshedpur'"
+     ]
+    },
+    {
+     "id": "tc07",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'cake'",
+      "expected >= 2 items, got 1"
+     ]
+    },
+    {
+     "id": "tc11",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'wifi'"
+     ]
+    },
+    {
+     "id": "tc19",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'sweets'"
+     ]
+    },
+    {
+     "id": "tc21",
+     "task": "schedule",
+     "why": [
+      "expected >= 6 items, got 4"
+     ]
+    },
+    {
+     "id": "tc25",
+     "task": "schedule",
+     "why": [
+      "expected >= 6 items, got 4"
+     ]
+    },
+    {
+     "id": "tc26",
+     "task": "announcement",
+     "why": [
+      "missing keyword 'Kolkata'"
+     ]
+    },
+    {
+     "id": "tc29",
+     "task": "schedule",
+     "why": [
+      "expected >= 5 items, got 3"
+     ]
+    },
+    {
+     "id": "tc31",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'minutes'"
+     ]
+    },
+    {
+     "id": "tc46",
+     "task": "announcement",
+     "why": [
+      "expected ok=False but got ok=True (None)"
+     ]
+    },
+    {
+     "id": "tc47",
+     "task": "schedule",
+     "why": [
+      "expected a warning containing 'interrupted'"
+     ]
+    },
+    {
+     "id": "tc48",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'jamshedpur'",
+      "missing keyword 'मेला'"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "v1 + llama3.2:3b",
+   "prompt_version": "v1",
+   "model": "llama3.2:3b",
+   "cases": 50,
+   "schema_valid_raw": 0.0,
+   "schema_valid_final": 0.0,
+   "instruction_following": 0.0,
+   "pass_rate": 0.04,
+   "latency_mean_s": 9.434,
+   "latency_p95_s": 11.803,
+   "tokens": 28940,
+   "cost_usd": 0.0,
+   "retry_rate": 0.98,
+   "fallback_rate": 0.0,
+   "failures": [
+    {
+     "id": "tc01",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed (' organizer', 'action', 'description', 'end', 'id', 'invitee', 'start', 'title' were unexpected))"
+     ]
+    },
+    {
+     "id": "tc02",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('action', 'date', 'details', 'property', 'venue' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc03",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('assignee', 'due_date', 'status' were unexpected); tasks/0: 'owner' is a required property; tasks/0: 'priority' is a required property)"
+     ]
+    },
+    {
+     "id": "tc04",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'summary' is a required property)"
+     ]
+    },
+    {
+     "id": "tc05",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'details', 'name', 'tasks' were unexpected))"
+     ]
+    },
+    {
+     "id": "tc06",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'event', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc07",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('description', 'owner', 'preparer', 'task' were unexpected); $: 'tasks' is a required property)"
+     ]
+    },
+    {
+     "id": "tc08",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('actions' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc09",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'event' were unexpected))"
+     ]
+    },
+    {
+     "id": "tc10",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'timing', 'title' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc11",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('task_list' was unexpected); $: 'tasks' is a required property)"
+     ]
+    },
+    {
+     "id": "tc12",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'organizers' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc13",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('end', 'location', 'start', 'summary', 'type' were unexpected))"
+     ]
+    },
+    {
+     "id": "tc14",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('content', 'date', 'location', 'metrics', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc15",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('priority', 'task' were unexpected); $: 'tasks' is a required property)"
+     ]
+    },
+    {
+     "id": "tc16",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('hashtag', 'properties' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc17",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('Tara', 'Vikram', 'dinner', 'puja', 'setup' were unexpected); $: 'items' is a required property)"
+     ]
+    },
+    {
+     "id": "tc18",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'details', 'event', 'location' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc19",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('task_list' was unexpected); $: 'tasks' is a required property)"
+     ]
+    },
+    {
+     "id": "tc20",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('content_pack' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc21",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('start', 'type' were unexpected))"
+     ]
+    },
+    {
+     "id": "tc22",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('properties' was unexpected); $: 'headline' is a required property)"
+     ]
+    },
+    {
+     "id": "tc23",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('details', 'level', 'name', 'urgency' were unexpected); tasks/0: 'task' is a required property; tasks/0: 'owner' is a required property)"
+     ]
+    },
+    {
+     "id": "tc24",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('customer_workshop' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc25",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'orders', 'organizers' were unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+     ]
+    },
+    {
+     "id": "tc26",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'events', 'location', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc27",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'description', 'priority', 'task' were unexpected); $: 'tasks' is a required property)"
+     ]
+    },
+    {
+     "id": "tc28",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('annual_sports_day', 'march_time', 'marking_the_track', 'ordering_trophies', 'prize_giving_time', 'relay_time', 'trophies_ordered_by', 'tug_of_war_time' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc29",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('boardMeeting' was unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+     ]
+    },
+    {
+     "id": "tc30",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('board_meeting' was unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc31",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('done', 'owner', 'task', 'title' were unexpected); $: 'tasks' is a required property)"
+     ]
+    },
+    {
+     "id": "tc32",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'email_subject' is a required property; $: 'summary' is a required property; $: 'hashtags' is a required property)"
+     ]
+    },
+    {
+     "id": "tc33",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'name', 'personnel' were unexpected))"
+     ]
+    },
+    {
+     "id": "tc34",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('headliner', 'posterDesigner', 'soundCrew', 'ticketSeller', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc35",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('action', 'assignee', 'description', 'seller', 'sold', 'task' were unexpected); $: 'tasks' is a required property)"
+     ]
+    },
+    {
+     "id": "tc36",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('doors', 'first_act', 'headliner', 'poster_design', 'sound_check', 'sound_crew', 'ticket_sales' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc37",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('tasks' was unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+     ]
+    },
+    {
+     "id": "tc38",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('agenda', 'date', 'event', 'tasks', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc39",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('assignee', 'description' were unexpected); tasks/0/priority: 'null' is not one of ['high', 'medium', 'low'])"
+     ]
+    },
+    {
+     "id": "tc40",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('onboarding_events', 'tasks' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc41",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events' was unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+     ]
+    },
+    {
+     "id": "tc42",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('demo_time', 'launch_date', 'qa_time', 'title' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+     ]
+    },
+    {
+     "id": "tc43",
+     "task": "announcement",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('additionalProperties', 'length', 'text' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+     ]
+    },
+    {
+     "id": "tc44",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('collector', 'description', 'liaison', 'owner', 'task', 'urgency' were unexpected); $: 'tasks' is a required property)"
+     ]
+    },
+    {
+     "id": "tc45",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('activity', 'reviewTime', 'startTime', 'type' were unexpected); $: 'title' is a required property; $: 'items' is a required property)"
+     ]
+    },
+    {
+     "id": "tc47",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('interrupt' was unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+     ]
+    },
+    {
+     "id": "tc48",
+     "task": "schedule",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('details', 'id', 'name' were unexpected))"
+     ]
+    },
+    {
+     "id": "tc50",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('description', 'owner', 'priority', 'task', 'time' were unexpected); $: 'tasks' is a required property)"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "v2 + llama3.2:3b",
+   "prompt_version": "v2",
+   "model": "llama3.2:3b",
+   "cases": 50,
+   "schema_valid_raw": 0.898,
+   "schema_valid_final": 0.959,
+   "instruction_following": 0.688,
+   "pass_rate": 0.68,
+   "latency_mean_s": 3.645,
+   "latency_p95_s": 6.753,
+   "tokens": 18119,
+   "cost_usd": 0.0,
+   "retry_rate": 0.1,
+   "fallback_rate": 0.0,
+   "failures": [
+    {
+     "id": "tc01",
+     "task": "schedule",
+     "why": [
+      "expected >= 5 items, got 3"
+     ]
+    },
+    {
+     "id": "tc03",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'venue'"
+     ]
+    },
+    {
+     "id": "tc05",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'Jamshedpur'"
+     ]
+    },
+    {
+     "id": "tc07",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0: '{' is not of type 'object')"
+     ]
+    },
+    {
+     "id": "tc11",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'wifi'"
+     ]
+    },
+    {
+     "id": "tc19",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'sweets'"
+     ]
+    },
+    {
+     "id": "tc21",
+     "task": "schedule",
+     "why": [
+      "expected >= 6 items, got 4"
+     ]
+    },
+    {
+     "id": "tc25",
+     "task": "schedule",
+     "why": [
+      "expected >= 6 items, got 4"
+     ]
+    },
+    {
+     "id": "tc31",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'minutes'"
+     ]
+    },
+    {
+     "id": "tc33",
+     "task": "schedule",
+     "why": [
+      "expected >= 7 items, got 4"
+     ]
+    },
+    {
+     "id": "tc39",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'laptops'"
+     ]
+    },
+    {
+     "id": "tc40",
+     "task": "content_pack",
+     "why": [
+      "tweet is 976 chars, limit 280"
+     ]
+    },
+    {
+     "id": "tc46",
+     "task": "announcement",
+     "why": [
+      "expected ok=False but got ok=True (None)"
+     ]
+    },
+    {
+     "id": "tc47",
+     "task": "schedule",
+     "why": [
+      "expected a warning containing 'interrupted'"
+     ]
+    },
+    {
+     "id": "tc48",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'मेला'"
+     ]
+    },
+    {
+     "id": "tc50",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0/priority: 'null' is not one of ['high', 'medium', 'low']; tasks/3/priority: 'null' is not one of ['high', 'medium', 'low'])"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "v3 + llama3.2:3b",
+   "prompt_version": "v3",
+   "model": "llama3.2:3b",
+   "cases": 50,
+   "schema_valid_raw": 0.898,
+   "schema_valid_final": 1.0,
+   "instruction_following": 0.646,
+   "pass_rate": 0.64,
+   "latency_mean_s": 3.499,
+   "latency_p95_s": 6.305,
+   "tokens": 17897,
+   "cost_usd": 0.0,
+   "retry_rate": 0.1,
+   "fallback_rate": 0.0,
+   "failures": [
+    {
+     "id": "tc01",
+     "task": "schedule",
+     "why": [
+      "expected >= 5 items, got 4"
+     ]
+    },
+    {
+     "id": "tc03",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'venue'"
+     ]
+    },
+    {
+     "id": "tc05",
+     "task": "schedule",
+     "why": [
+      "expected >= 5 items, got 3"
+     ]
+    },
+    {
+     "id": "tc07",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'cake'",
+      "expected >= 2 items, got 1"
+     ]
+    },
+    {
+     "id": "tc11",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'wifi'"
+     ]
+    },
+    {
+     "id": "tc15",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'dashboard'"
+     ]
+    },
+    {
+     "id": "tc17",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'Ranchi'",
+      "expected >= 5 items, got 4"
+     ]
+    },
+    {
+     "id": "tc19",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'sweets'"
+     ]
+    },
+    {
+     "id": "tc21",
+     "task": "schedule",
+     "why": [
+      "expected >= 6 items, got 4"
+     ]
+    },
+    {
+     "id": "tc23",
+     "task": "task_list",
+     "why": [
+      "expected >= 2 items, got 1"
+     ]
+    },
+    {
+     "id": "tc25",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'Kolkata'",
+      "expected >= 6 items, got 4"
+     ]
+    },
+    {
+     "id": "tc31",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'minutes'"
+     ]
+    },
+    {
+     "id": "tc33",
+     "task": "schedule",
+     "why": [
+      "expected >= 7 items, got 4"
+     ]
+    },
+    {
+     "id": "tc37",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'Hyderabad'"
+     ]
+    },
+    {
+     "id": "tc40",
+     "task": "content_pack",
+     "why": [
+      "tweet is 465 chars, limit 280"
+     ]
+    },
+    {
+     "id": "tc46",
+     "task": "announcement",
+     "why": [
+      "expected ok=False but got ok=True (None)"
+     ]
+    },
+    {
+     "id": "tc47",
+     "task": "schedule",
+     "why": [
+      "expected a warning containing 'interrupted'"
+     ]
+    },
+    {
+     "id": "tc48",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'jamshedpur'",
+      "missing keyword 'मेला'"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "v4 + llama3.2:3b",
+   "prompt_version": "v4",
+   "model": "llama3.2:3b",
+   "cases": 50,
+   "schema_valid_raw": 0.816,
+   "schema_valid_final": 0.939,
+   "instruction_following": 0.688,
+   "pass_rate": 0.68,
+   "latency_mean_s": 3.658,
+   "latency_p95_s": 6.629,
+   "tokens": 19676,
+   "cost_usd": 0.0,
+   "retry_rate": 0.16,
+   "fallback_rate": 0.0,
+   "failures": [
+    {
+     "id": "tc01",
+     "task": "schedule",
+     "why": [
+      "expected >= 5 items, got 3"
+     ]
+    },
+    {
+     "id": "tc03",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'venue'"
+     ]
+    },
+    {
+     "id": "tc05",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'Jamshedpur'"
+     ]
+    },
+    {
+     "id": "tc07",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0/priority: 'no priority specified' is not one of ['high', 'medium', 'low']; tasks/1/priority: 'urgent' is not one of ['high', 'medium', 'low']; tasks/2/priority: 'no priority specified' is not one of ['high', 'medium', 'low'])"
+     ]
+    },
+    {
+     "id": "tc11",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'wifi'"
+     ]
+    },
+    {
+     "id": "tc12",
+     "task": "content_pack",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on llama3.2:3b: timed out)"
+     ]
+    },
+    {
+     "id": "tc17",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'Ranchi'"
+     ]
+    },
+    {
+     "id": "tc19",
+     "task": "task_list",
+     "why": [
+      "missing keyword 'sweets'"
+     ]
+    },
+    {
+     "id": "tc21",
+     "task": "schedule",
+     "why": [
+      "expected >= 6 items, got 4"
+     ]
+    },
+    {
+     "id": "tc25",
+     "task": "schedule",
+     "why": [
+      "expected >= 6 items, got 5"
+     ]
+    },
+    {
+     "id": "tc33",
+     "task": "schedule",
+     "why": [
+      "expected >= 7 items, got 5"
+     ]
+    },
+    {
+     "id": "tc37",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'Hyderabad'"
+     ]
+    },
+    {
+     "id": "tc46",
+     "task": "announcement",
+     "why": [
+      "expected ok=False but got ok=True (None)"
+     ]
+    },
+    {
+     "id": "tc47",
+     "task": "schedule",
+     "why": [
+      "expected a warning containing 'interrupted'"
+     ]
+    },
+    {
+     "id": "tc48",
+     "task": "schedule",
+     "why": [
+      "missing keyword 'jamshedpur'",
+      "missing keyword 'मेला'"
+     ]
+    },
+    {
+     "id": "tc50",
+     "task": "task_list",
+     "why": [
+      "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0/owner: '' should be non-empty; tasks/0/priority: '' is not one of ['high', 'medium', 'low'])"
+     ]
+    }
+   ]
   }
  ],
  "cheaper_model": [
@@ -282,7 +1139,7 @@
    "small_pass": 0.929,
    "large_pass": 1.0,
    "small_cost": 0.00122,
-   "large_cost": 0.02563,
+   "large_cost": 0.02567,
    "verdict": "small model is NOT enough",
    "small_failed": [
     "tc45"
@@ -1212,7 +2069,7 @@
     "ok": false,
     "passed": false,
     "failures": [
-     "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s)"
+     "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 90.0s)"
     ],
     "raw_valid": false,
     "latency_s": 0.0,
@@ -1221,7 +2078,7 @@
     "retried": false,
     "fallback": false,
     "model": null,
-    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s",
+    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 90.0s",
     "has_constraints": true
    },
    {
@@ -1241,7 +2098,7 @@
     "retried": false,
     "fallback": false,
     "model": null,
-    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s",
+    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 90.0s",
     "has_constraints": false
    },
    {
@@ -1274,11 +2131,11 @@
     "ok": true,
     "passed": true,
     "failures": [],
-    "raw_valid": true,
-    "latency_s": 0.572,
-    "tokens": 76,
-    "cost_usd": 3.2e-05,
-    "retried": false,
+    "raw_valid": false,
+    "latency_s": 1.064,
+    "tokens": 155,
+    "cost_usd": 5.7e-05,
+    "retried": true,
     "fallback": false,
     "model": "mock-small",
     "error": null,
@@ -2265,7 +3122,7 @@
     "retried": false,
     "fallback": false,
     "model": null,
-    "error": "all models failed after 1 attempts; last error: timeout on mock-large: mock-large exceeded 10.0s",
+    "error": "all models failed after 1 attempts; last error: timeout on mock-large: mock-large exceeded 90.0s",
     "has_constraints": false
    },
    {
@@ -2299,9 +3156,9 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 1.716,
-    "tokens": 76,
-    "cost_usd": 0.000744,
+    "latency_s": 1.74,
+    "tokens": 80,
+    "cost_usd": 0.00078,
     "retried": false,
     "fallback": false,
     "model": "mock-large",
@@ -3240,7 +4097,7 @@
     "ok": false,
     "passed": false,
     "failures": [
-     "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s)"
+     "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 90.0s)"
     ],
     "raw_valid": false,
     "latency_s": 0.0,
@@ -3249,7 +4106,7 @@
     "retried": false,
     "fallback": false,
     "model": null,
-    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s",
+    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 90.0s",
     "has_constraints": true
    },
    {
@@ -3269,7 +4126,7 @@
     "retried": false,
     "fallback": false,
     "model": null,
-    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 10.0s",
+    "error": "all models failed after 1 attempts; last error: timeout on mock-small: mock-small exceeded 90.0s",
     "has_constraints": false
    },
    {
@@ -3303,9 +4160,9 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.572,
-    "tokens": 230,
-    "cost_usd": 6.3e-05,
+    "latency_s": 0.58,
+    "tokens": 234,
+    "cost_usd": 6.5e-05,
     "retried": false,
     "fallback": false,
     "model": "mock-small",
@@ -4271,7 +5128,7 @@
     "retried": false,
     "fallback": false,
     "model": null,
-    "error": "all models failed after 1 attempts; last error: timeout on mock-large: mock-large exceeded 10.0s",
+    "error": "all models failed after 1 attempts; last error: timeout on mock-large: mock-large exceeded 90.0s",
     "has_constraints": false
    },
    {
@@ -4305,9 +5162,9 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 1.716,
-    "tokens": 230,
-    "cost_usd": 0.001206,
+    "latency_s": 1.74,
+    "tokens": 234,
+    "cost_usd": 0.001242,
     "retried": false,
     "fallback": false,
     "model": "mock-large",
@@ -4364,15 +5221,17 @@
      "schedule"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "expected >= 5 items, got 3"
+    ],
     "raw_valid": true,
-    "latency_s": 0.712,
-    "tokens": 279,
-    "cost_usd": 8.7e-05,
+    "latency_s": 5.645,
+    "tokens": 327,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4387,12 +5246,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.596,
-    "tokens": 215,
-    "cost_usd": 6.3e-05,
+    "latency_s": 2.722,
+    "tokens": 264,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4407,12 +5266,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.564,
-    "tokens": 218,
-    "cost_usd": 6e-05,
+    "latency_s": 2.91,
+    "tokens": 267,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4444,15 +5303,17 @@
      "schedule"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
-    "raw_valid": false,
-    "latency_s": 0.796,
-    "tokens": 304,
-    "cost_usd": 0.0001,
+    "passed": false,
+    "failures": [
+     "missing keyword 'Jamshedpur'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.283,
+    "tokens": 351,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4467,12 +5328,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.612,
-    "tokens": 222,
-    "cost_usd": 6.6e-05,
+    "latency_s": 2.817,
+    "tokens": 255,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4484,15 +5345,18 @@
      "task_list"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
-    "raw_valid": true,
-    "latency_s": 0.556,
-    "tokens": 219,
-    "cost_usd": 5.9e-05,
-    "retried": false,
+    "passed": false,
+    "failures": [
+     "missing keyword 'cake'",
+     "expected >= 2 items, got 1"
+    ],
+    "raw_valid": false,
+    "latency_s": 5.392,
+    "tokens": 545,
+    "cost_usd": 0.0,
+    "retried": true,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4527,12 +5391,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.812,
-    "tokens": 315,
-    "cost_usd": 0.000104,
+    "latency_s": 3.507,
+    "tokens": 381,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4547,12 +5411,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.64,
-    "tokens": 236,
-    "cost_usd": 7.1e-05,
+    "latency_s": 2.83,
+    "tokens": 266,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4564,15 +5428,17 @@
      "task_list"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "missing keyword 'wifi'"
+    ],
     "raw_valid": true,
-    "latency_s": 0.632,
-    "tokens": 241,
-    "cost_usd": 7.1e-05,
+    "latency_s": 3.075,
+    "tokens": 297,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4606,13 +5472,13 @@
     "ok": true,
     "passed": true,
     "failures": [],
-    "raw_valid": true,
-    "latency_s": 0.72,
-    "tokens": 284,
-    "cost_usd": 8.9e-05,
-    "retried": false,
+    "raw_valid": false,
+    "latency_s": 9.814,
+    "tokens": 1107,
+    "cost_usd": 0.0,
+    "retried": true,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4626,13 +5492,13 @@
     "ok": true,
     "passed": true,
     "failures": [],
-    "raw_valid": false,
-    "latency_s": 0.676,
-    "tokens": 237,
-    "cost_usd": 7.5e-05,
+    "raw_valid": true,
+    "latency_s": 2.825,
+    "tokens": 253,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4647,11 +5513,11 @@
     "passed": true,
     "failures": [],
     "raw_valid": false,
-    "latency_s": 0.632,
-    "tokens": 237,
+    "latency_s": 8.931,
+    "tokens": 1110,
     "cost_usd": 7.1e-05,
-    "retried": false,
-    "fallback": false,
+    "retried": true,
+    "fallback": true,
     "model": "mock-small",
     "error": null,
     "has_constraints": true
@@ -4687,12 +5553,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.716,
-    "tokens": 280,
-    "cost_usd": 8.8e-05,
+    "latency_s": 3.344,
+    "tokens": 364,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4707,12 +5573,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.6,
-    "tokens": 216,
-    "cost_usd": 6.3e-05,
+    "latency_s": 2.937,
+    "tokens": 268,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4724,15 +5590,17 @@
      "task_list"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "missing keyword 'sweets'"
+    ],
     "raw_valid": true,
-    "latency_s": 0.564,
-    "tokens": 221,
-    "cost_usd": 6.1e-05,
+    "latency_s": 2.94,
+    "tokens": 275,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4764,15 +5632,17 @@
      "schedule"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "expected >= 6 items, got 4"
+    ],
     "raw_valid": true,
-    "latency_s": 0.772,
-    "tokens": 301,
-    "cost_usd": 9.7e-05,
+    "latency_s": 3.149,
+    "tokens": 334,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4787,12 +5657,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.628,
-    "tokens": 230,
-    "cost_usd": 6.9e-05,
+    "latency_s": 2.651,
+    "tokens": 247,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4807,12 +5677,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.564,
-    "tokens": 223,
-    "cost_usd": 6.1e-05,
+    "latency_s": 2.757,
+    "tokens": 267,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4844,15 +5714,17 @@
      "schedule"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "expected >= 6 items, got 4"
+    ],
     "raw_valid": true,
-    "latency_s": 0.776,
-    "tokens": 303,
-    "cost_usd": 9.8e-05,
+    "latency_s": 3.136,
+    "tokens": 342,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4864,15 +5736,17 @@
      "constraint"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "missing keyword 'Kolkata'"
+    ],
     "raw_valid": true,
-    "latency_s": 0.632,
-    "tokens": 232,
-    "cost_usd": 7e-05,
+    "latency_s": 2.664,
+    "tokens": 252,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4886,13 +5760,13 @@
     "ok": true,
     "passed": true,
     "failures": [],
-    "raw_valid": true,
-    "latency_s": 0.572,
-    "tokens": 224,
-    "cost_usd": 6.2e-05,
-    "retried": false,
+    "raw_valid": false,
+    "latency_s": 5.96,
+    "tokens": 629,
+    "cost_usd": 0.0,
+    "retried": true,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4924,15 +5798,17 @@
      "schedule"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "expected >= 5 items, got 3"
+    ],
     "raw_valid": true,
-    "latency_s": 0.72,
-    "tokens": 283,
-    "cost_usd": 8.9e-05,
+    "latency_s": 2.897,
+    "tokens": 315,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4947,12 +5823,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.604,
-    "tokens": 218,
-    "cost_usd": 6.4e-05,
+    "latency_s": 2.839,
+    "tokens": 257,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -4964,15 +5840,17 @@
      "task_list"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "missing keyword 'minutes'"
+    ],
     "raw_valid": true,
-    "latency_s": 0.56,
-    "tokens": 219,
-    "cost_usd": 6e-05,
+    "latency_s": 2.817,
+    "tokens": 269,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5007,12 +5885,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.808,
-    "tokens": 311,
-    "cost_usd": 0.000103,
+    "latency_s": 3.565,
+    "tokens": 385,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5027,12 +5905,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.632,
-    "tokens": 232,
-    "cost_usd": 7e-05,
+    "latency_s": 2.726,
+    "tokens": 259,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5047,12 +5925,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.624,
-    "tokens": 238,
-    "cost_usd": 7e-05,
+    "latency_s": 3.048,
+    "tokens": 289,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5087,12 +5965,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.928,
-    "tokens": 359,
-    "cost_usd": 0.000125,
+    "latency_s": 3.819,
+    "tokens": 433,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5107,12 +5985,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.696,
-    "tokens": 266,
-    "cost_usd": 8.3e-05,
+    "latency_s": 2.657,
+    "tokens": 270,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5127,12 +6005,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.636,
-    "tokens": 248,
-    "cost_usd": 7.3e-05,
+    "latency_s": 3.327,
+    "tokens": 327,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5166,13 +6044,13 @@
     "ok": true,
     "passed": true,
     "failures": [],
-    "raw_valid": false,
-    "latency_s": 1.016,
-    "tokens": 446,
-    "cost_usd": 0.000111,
-    "retried": true,
+    "raw_valid": true,
+    "latency_s": 2.673,
+    "tokens": 279,
+    "cost_usd": 0.0,
+    "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5206,13 +6084,13 @@
     "ok": true,
     "passed": true,
     "failures": [],
-    "raw_valid": true,
-    "latency_s": 0.588,
-    "tokens": 210,
-    "cost_usd": 6.1e-05,
-    "retried": false,
+    "raw_valid": false,
+    "latency_s": 5.502,
+    "tokens": 492,
+    "cost_usd": 0.0,
+    "retried": true,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5227,12 +6105,12 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.728,
-    "tokens": 270,
-    "cost_usd": 8.7e-05,
+    "latency_s": 3.43,
+    "tokens": 332,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5247,13 +6125,1112 @@
     "passed": true,
     "failures": [],
     "raw_valid": false,
-    "latency_s": 1.632,
-    "tokens": 221,
-    "cost_usd": 0.001095,
-    "retried": false,
-    "fallback": true,
-    "model": "mock-large",
+    "latency_s": 5.413,
+    "tokens": 591,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
     "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected ok=False but got ok=True (None)"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.656,
+    "tokens": 211,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected a warning containing 'interrupted'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.996,
+    "tokens": 235,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'jamshedpur'",
+     "missing keyword 'मेला'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.728,
+    "tokens": 294,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 9.675,
+    "tokens": 1262,
+    "cost_usd": 7e-05,
+    "retried": true,
+    "fallback": true,
+    "model": "mock-small",
+    "error": null,
+    "has_constraints": true
+   }
+  ],
+  "v1 + llama3.2:3b": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed (' organizer', 'action', 'description', 'end', 'id', 'invitee', 'start', 'title' were unexpected))"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.783,
+    "tokens": 603,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed (' organizer', 'action', 'description', 'end', 'id', 'invitee', 'start', 'title' were unexpected)",
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('action', 'date', 'details', 'property', 'venue' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.879,
+    "tokens": 548,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('action', 'date', 'details', 'property', 'venue' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('assignee', 'due_date', 'status' were unexpected); tasks/0: 'owner' is a required property; tasks/0: 'priority' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.601,
+    "tokens": 532,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('assignee', 'due_date', 'status' were unexpected); tasks/0: 'owner' is a required property; tasks/0: 'priority' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'summary' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.371,
+    "tokens": 602,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'summary' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'details', 'name', 'tasks' were unexpected))"
+    ],
+    "raw_valid": false,
+    "latency_s": 10.367,
+    "tokens": 687,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'details', 'name', 'tasks' were unexpected)",
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'event', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.394,
+    "tokens": 501,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'event', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('description', 'owner', 'preparer', 'task' were unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 7.909,
+    "tokens": 372,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('description', 'owner', 'preparer', 'task' were unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('actions' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.869,
+    "tokens": 683,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('actions' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'event' were unexpected))"
+    ],
+    "raw_valid": false,
+    "latency_s": 11.616,
+    "tokens": 852,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'event' were unexpected)",
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'timing', 'title' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.11,
+    "tokens": 618,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'timing', 'title' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('task_list' was unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 10.594,
+    "tokens": 693,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('task_list' was unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'organizers' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 11.803,
+    "tokens": 897,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'organizers' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('end', 'location', 'start', 'summary', 'type' were unexpected))"
+    ],
+    "raw_valid": false,
+    "latency_s": 12.978,
+    "tokens": 921,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('end', 'location', 'start', 'summary', 'type' were unexpected)",
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('content', 'date', 'location', 'metrics', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.612,
+    "tokens": 506,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('content', 'date', 'location', 'metrics', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('priority', 'task' were unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 7.879,
+    "tokens": 401,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('priority', 'task' were unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('hashtag', 'properties' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 10.338,
+    "tokens": 715,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('hashtag', 'properties' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('Tara', 'Vikram', 'dinner', 'puja', 'setup' were unexpected); $: 'items' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.08,
+    "tokens": 566,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('Tara', 'Vikram', 'dinner', 'puja', 'setup' were unexpected); $: 'items' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'details', 'event', 'location' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.871,
+    "tokens": 564,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'details', 'event', 'location' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('task_list' was unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.148,
+    "tokens": 417,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('task_list' was unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('content_pack' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.586,
+    "tokens": 621,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('content_pack' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('start', 'type' were unexpected))"
+    ],
+    "raw_valid": false,
+    "latency_s": 10.184,
+    "tokens": 691,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('start', 'type' were unexpected)",
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('properties' was unexpected); $: 'headline' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.477,
+    "tokens": 525,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('properties' was unexpected); $: 'headline' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('details', 'level', 'name', 'urgency' were unexpected); tasks/0: 'task' is a required property; tasks/0: 'owner' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.577,
+    "tokens": 445,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('details', 'level', 'name', 'urgency' were unexpected); tasks/0: 'task' is a required property; tasks/0: 'owner' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('customer_workshop' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.056,
+    "tokens": 582,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('customer_workshop' was unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'orders', 'organizers' were unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 12.144,
+    "tokens": 920,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events', 'orders', 'organizers' were unexpected); $: 'title' is a required property; $: 'date' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'events', 'location', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.123,
+    "tokens": 595,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'events', 'location', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'description', 'priority', 'task' were unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.241,
+    "tokens": 428,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('date', 'description', 'priority', 'task' were unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('annual_sports_day', 'march_time', 'marking_the_track', 'ordering_trophies', 'prize_giving_time', 'relay_time', 'trophies_ordered_by', 'tug_of_war_time' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 10.077,
+    "tokens": 699,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('annual_sports_day', 'march_time', 'marking_the_track', 'ordering_trophies', 'prize_giving_time', 'relay_time', 'trophies_ordered_by', 'tug_of_war_time' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('boardMeeting' was unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.615,
+    "tokens": 597,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('boardMeeting' was unexpected); $: 'title' is a required property; $: 'date' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('board_meeting' was unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.364,
+    "tokens": 600,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('board_meeting' was unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('done', 'owner', 'task', 'title' were unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.125,
+    "tokens": 382,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('done', 'owner', 'task', 'title' were unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'email_subject' is a required property; $: 'summary' is a required property; $: 'hashtags' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 10.01,
+    "tokens": 668,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'email_subject' is a required property; $: 'summary' is a required property; $: 'hashtags' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'name', 'personnel' were unexpected))"
+    ],
+    "raw_valid": false,
+    "latency_s": 10.021,
+    "tokens": 669,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('date', 'name', 'personnel' were unexpected)",
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('headliner', 'posterDesigner', 'soundCrew', 'ticketSeller', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.798,
+    "tokens": 605,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('headliner', 'posterDesigner', 'soundCrew', 'ticketSeller', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('action', 'assignee', 'description', 'seller', 'sold', 'task' were unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.844,
+    "tokens": 505,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('action', 'assignee', 'description', 'seller', 'sold', 'task' were unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('doors', 'first_act', 'headliner', 'poster_design', 'sound_check', 'sound_crew', 'ticket_sales' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.941,
+    "tokens": 605,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('doors', 'first_act', 'headliner', 'poster_design', 'sound_check', 'sound_crew', 'ticket_sales' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('tasks' was unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 14.78,
+    "tokens": 1212,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('tasks' was unexpected); $: 'title' is a required property; $: 'date' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('agenda', 'date', 'event', 'tasks', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 10.128,
+    "tokens": 744,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('agenda', 'date', 'event', 'tasks', 'time' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('assignee', 'description' were unexpected); tasks/0/priority: 'null' is not one of ['high', 'medium', 'low'])"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.882,
+    "tokens": 547,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: tasks/0: Additional properties are not allowed ('assignee', 'description' were unexpected); tasks/0/priority: 'null' is not one of ['high', 'medium', 'low']",
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('onboarding_events', 'tasks' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 11.62,
+    "tokens": 944,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('onboarding_events', 'tasks' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events' was unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.263,
+    "tokens": 399,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('events' was unexpected); $: 'title' is a required property; $: 'date' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('demo_time', 'launch_date', 'qa_time', 'title' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.095,
+    "tokens": 433,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('demo_time', 'launch_date', 'qa_time', 'title' were unexpected); $: 'tweet' is a required property; $: 'email_subject' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('additionalProperties', 'length', 'text' were unexpected); $: 'headline' is a required property; $: 'body' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.067,
+    "tokens": 415,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('additionalProperties', 'length', 'text' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('collector', 'description', 'liaison', 'owner', 'task', 'urgency' were unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.624,
+    "tokens": 442,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('collector', 'description', 'liaison', 'owner', 'task', 'urgency' were unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('activity', 'reviewTime', 'startTime', 'type' were unexpected); $: 'title' is a required property; $: 'items' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.174,
+    "tokens": 418,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('activity', 'reviewTime', 'startTime', 'type' were unexpected); $: 'title' is a required property; $: 'items' is a required property",
     "has_constraints": true
    },
    {
@@ -5267,13 +7244,1047 @@
     "passed": true,
     "failures": [],
     "raw_valid": false,
+    "latency_s": 8.331,
+    "tokens": 424,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('downtime', 'server_maintenance', 'timeout' were unexpected); $: 'headline' is a required property; $: 'body' is a required property",
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('interrupt' was unexpected); $: 'title' is a required property; $: 'date' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.568,
+    "tokens": 290,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('interrupt' was unexpected); $: 'title' is a required property; $: 'date' is a required property",
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('details', 'id', 'name' were unexpected))"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.213,
+    "tokens": 444,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: 'title' is a required property; $: 'date' is a required property; items/0: Additional properties are not allowed ('details', 'id', 'name' were unexpected)",
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
     "latency_s": 0.0,
     "tokens": 0,
     "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
     "model": null,
-    "error": "all models failed after 2 attempts; last error: timeout on mock-large: mock-large exceeded 10.0s",
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: $: Additional properties are not allowed ('description', 'owner', 'priority', 'task', 'time' were unexpected); $: 'tasks' is a required property)"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.126,
+    "tokens": 413,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: $: Additional properties are not allowed ('description', 'owner', 'priority', 'task', 'time' were unexpected); $: 'tasks' is a required property",
+    "has_constraints": true
+   }
+  ],
+  "v2 + llama3.2:3b": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 5 items, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.983,
+    "tokens": 315,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.876,
+    "tokens": 263,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'venue'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.882,
+    "tokens": 270,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.186,
+    "tokens": 320,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'Jamshedpur'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.3,
+    "tokens": 345,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.703,
+    "tokens": 244,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0: '{' is not of type 'object')"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.125,
+    "tokens": 901,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: tasks/0: '{' is not of type 'object'",
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.207,
+    "tokens": 327,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.509,
+    "tokens": 389,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.82,
+    "tokens": 268,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'wifi'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.141,
+    "tokens": 305,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 6.753,
+    "tokens": 756,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.369,
+    "tokens": 346,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.778,
+    "tokens": 254,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 5.564,
+    "tokens": 592,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.074,
+    "tokens": 314,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.441,
+    "tokens": 360,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.899,
+    "tokens": 262,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'sweets'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.875,
+    "tokens": 276,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.282,
+    "tokens": 328,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 6 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.209,
+    "tokens": 342,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.912,
+    "tokens": 267,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.888,
+    "tokens": 267,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.196,
+    "tokens": 331,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 6 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.112,
+    "tokens": 338,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.016,
+    "tokens": 277,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.326,
+    "tokens": 315,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.203,
+    "tokens": 338,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.227,
+    "tokens": 349,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.73,
+    "tokens": 252,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'minutes'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.826,
+    "tokens": 266,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.101,
+    "tokens": 319,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 7 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.121,
+    "tokens": 338,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.836,
+    "tokens": 272,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.0,
+    "tokens": 289,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.437,
+    "tokens": 353,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.929,
+    "tokens": 441,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.089,
+    "tokens": 301,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'laptops'"
+    ],
+    "raw_valid": false,
+    "latency_s": 5.836,
+    "tokens": 638,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "tweet is 976 chars, limit 280"
+    ],
+    "raw_valid": true,
+    "latency_s": 5.656,
+    "tokens": 605,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.825,
+    "tokens": 283,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.123,
+    "tokens": 296,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.616,
+    "tokens": 225,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.451,
+    "tokens": 332,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.768,
+    "tokens": 281,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected ok=False but got ok=True (None)"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.652,
+    "tokens": 215,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
     "has_constraints": false
    },
    {
@@ -5284,15 +8295,17 @@
      "interrupted_stream"
     ],
     "ok": true,
-    "passed": true,
-    "failures": [],
+    "passed": false,
+    "failures": [
+     "expected a warning containing 'interrupted'"
+    ],
     "raw_valid": true,
-    "latency_s": 0.588,
-    "tokens": 237,
-    "cost_usd": 6.6e-05,
+    "latency_s": 3.131,
+    "tokens": 248,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5304,15 +8317,1061 @@
      "unicode"
     ],
     "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'मेला'"
+    ],
+    "raw_valid": true,
+    "latency_s": 8.583,
+    "tokens": 878,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0/priority: 'null' is not one of ['high', 'medium', 'low']; tasks/3/priority: 'null' is not one of ['high', 'medium', 'low'])"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.063,
+    "tokens": 1028,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: tasks/0/priority: 'null' is not one of ['high', 'medium', 'low']; tasks/3/priority: 'null' is not one of ['high', 'medium', 'low']",
+    "has_constraints": true
+   }
+  ],
+  "v3 + llama3.2:3b": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 5 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.243,
+    "tokens": 345,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.572,
-    "tokens": 230,
-    "cost_usd": 6.3e-05,
+    "latency_s": 2.975,
+    "tokens": 279,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'venue'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.918,
+    "tokens": 282,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.135,
+    "tokens": 333,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 5 items, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.97,
+    "tokens": 331,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.888,
+    "tokens": 274,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'cake'",
+     "expected >= 2 items, got 1"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.202,
+    "tokens": 913,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.245,
+    "tokens": 342,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 6.807,
+    "tokens": 816,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.907,
+    "tokens": 281,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'wifi'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.053,
+    "tokens": 309,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.353,
+    "tokens": 369,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.285,
+    "tokens": 361,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.857,
+    "tokens": 269,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'dashboard'"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.231,
+    "tokens": 909,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.128,
+    "tokens": 329,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'Ranchi'",
+     "expected >= 5 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.192,
+    "tokens": 349,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.021,
+    "tokens": 283,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'sweets'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.943,
+    "tokens": 288,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.307,
+    "tokens": 350,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 6 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.09,
+    "tokens": 346,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.739,
+    "tokens": 261,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 2 items, got 1"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.992,
+    "tokens": 285,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.212,
+    "tokens": 344,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'Kolkata'",
+     "expected >= 6 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.026,
+    "tokens": 348,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.729,
+    "tokens": 270,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.154,
+    "tokens": 310,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.348,
+    "tokens": 356,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.39,
+    "tokens": 365,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.726,
+    "tokens": 263,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'minutes'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.834,
+    "tokens": 278,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.047,
+    "tokens": 326,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 7 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.14,
+    "tokens": 350,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.818,
+    "tokens": 279,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 5.652,
+    "tokens": 628,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.573,
+    "tokens": 378,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'Hyderabad'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.922,
+    "tokens": 441,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.017,
+    "tokens": 313,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.318,
+    "tokens": 339,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "tweet is 465 chars, limit 280"
+    ],
+    "raw_valid": true,
+    "latency_s": 4.286,
+    "tokens": 475,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.734,
+    "tokens": 291,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.984,
+    "tokens": 295,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.81,
+    "tokens": 246,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.448,
+    "tokens": 344,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.728,
+    "tokens": 293,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected ok=False but got ok=True (None)"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.719,
+    "tokens": 225,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected a warning containing 'interrupted'"
+    ],
+    "raw_valid": false,
+    "latency_s": 6.305,
+    "tokens": 601,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'jamshedpur'",
+     "missing keyword 'मेला'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.796,
+    "tokens": 306,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
     "error": null,
     "has_constraints": true
    },
@@ -5347,13 +9406,1048 @@
     "passed": true,
     "failures": [],
     "raw_valid": true,
-    "latency_s": 0.632,
-    "tokens": 235,
-    "cost_usd": 7e-05,
+    "latency_s": 3.241,
+    "tokens": 329,
+    "cost_usd": 0.0,
     "retried": false,
     "fallback": false,
-    "model": "mock-small",
+    "model": "llama3.2:3b",
     "error": null,
+    "has_constraints": true
+   }
+  ],
+  "v4 + llama3.2:3b": [
+   {
+    "id": "tc01",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 5 items, got 3"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.011,
+    "tokens": 349,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc02",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.664,
+    "tokens": 268,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc03",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'venue'"
+    ],
+    "raw_valid": false,
+    "latency_s": 5.525,
+    "tokens": 620,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc04",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.076,
+    "tokens": 345,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc05",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'Jamshedpur'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.284,
+    "tokens": 371,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc06",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.923,
+    "tokens": 291,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc07",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0/priority: 'no priority specified' is not one of ['high', 'medium', 'low']; tasks/1/priority: 'urgent' is not one of ['high', 'medium', 'low']; tasks/2/priority: 'no priority specified' is not one of ['high', 'medium', 'low'])"
+    ],
+    "raw_valid": false,
+    "latency_s": 9.23,
+    "tokens": 1087,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: tasks/0/priority: 'no priority specified' is not one of ['high', 'medium', 'low']; tasks/1/priority: 'urgent' is not one of ['high', 'medium', 'low']; tasks/2/priority: 'no priority specified' is not one of ['high', 'medium', 'low']",
+    "has_constraints": true
+   },
+   {
+    "id": "tc08",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.481,
+    "tokens": 378,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc09",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.525,
+    "tokens": 413,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc10",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.827,
+    "tokens": 293,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc11",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'wifi'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.076,
+    "tokens": 320,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc12",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 1 attempts; last error: timeout on llama3.2:3b: timed out)"
+    ],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 1 attempts; last error: timeout on llama3.2:3b: timed out",
+    "has_constraints": true
+   },
+   {
+    "id": "tc13",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.392,
+    "tokens": 373,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc14",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.701,
+    "tokens": 265,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc15",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 8.654,
+    "tokens": 985,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc16",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.177,
+    "tokens": 337,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc17",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'Ranchi'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.902,
+    "tokens": 438,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc18",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.776,
+    "tokens": 282,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc19",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'sweets'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.935,
+    "tokens": 303,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc20",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 6.629,
+    "tokens": 745,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc21",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 6 items, got 4"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.22,
+    "tokens": 366,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc22",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.744,
+    "tokens": 272,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc23",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.781,
+    "tokens": 281,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc24",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.383,
+    "tokens": 365,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc25",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 6 items, got 5"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.208,
+    "tokens": 380,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc26",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.88,
+    "tokens": 301,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc27",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.955,
+    "tokens": 304,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc28",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.916,
+    "tokens": 324,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc29",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.276,
+    "tokens": 375,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc30",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.033,
+    "tokens": 295,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc31",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 5.705,
+    "tokens": 644,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc32",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.124,
+    "tokens": 347,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc33",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected >= 7 items, got 5"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.276,
+    "tokens": 381,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc34",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.779,
+    "tokens": 289,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc35",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.056,
+    "tokens": 315,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc36",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.318,
+    "tokens": 382,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc37",
+    "task": "schedule",
+    "tags": [
+     "happy",
+     "schedule"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'Hyderabad'"
+    ],
+    "raw_valid": true,
+    "latency_s": 3.807,
+    "tokens": 457,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc38",
+    "task": "announcement",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 5.485,
+    "tokens": 623,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc39",
+    "task": "task_list",
+    "tags": [
+     "happy",
+     "task_list"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 6.189,
+    "tokens": 712,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc40",
+    "task": "content_pack",
+    "tags": [
+     "happy",
+     "constraint"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.593,
+    "tokens": 415,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc41",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.774,
+    "tokens": 305,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc42",
+    "task": "content_pack",
+    "tags": [
+     "edge",
+     "malformed_json"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.816,
+    "tokens": 299,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc43",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.654,
+    "tokens": 257,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc44",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "contradictory"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 3.465,
+    "tokens": 357,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc45",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "timeout_fallback"
+    ],
+    "ok": true,
+    "passed": true,
+    "failures": [],
+    "raw_valid": true,
+    "latency_s": 2.757,
+    "tokens": 307,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc46",
+    "task": "announcement",
+    "tags": [
+     "edge",
+     "timeout_all"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected ok=False but got ok=True (None)"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.655,
+    "tokens": 238,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": false
+   },
+   {
+    "id": "tc47",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "interrupted_stream"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "expected a warning containing 'interrupted'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.98,
+    "tokens": 268,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc48",
+    "task": "schedule",
+    "tags": [
+     "edge",
+     "unicode"
+    ],
+    "ok": true,
+    "passed": false,
+    "failures": [
+     "missing keyword 'jamshedpur'",
+     "missing keyword 'मेला'"
+    ],
+    "raw_valid": true,
+    "latency_s": 2.75,
+    "tokens": 320,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": "llama3.2:3b",
+    "error": null,
+    "has_constraints": true
+   },
+   {
+    "id": "tc49",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "empty_input"
+    ],
+    "ok": false,
+    "passed": true,
+    "failures": [],
+    "raw_valid": false,
+    "latency_s": 0.0,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "retried": false,
+    "fallback": false,
+    "model": null,
+    "error": "empty input: provide the messy instructions to convert",
+    "has_constraints": false
+   },
+   {
+    "id": "tc50",
+    "task": "task_list",
+    "tags": [
+     "edge",
+     "noisy_bullets"
+    ],
+    "ok": false,
+    "passed": false,
+    "failures": [
+     "expected ok=True but got ok=False (all models failed after 3 attempts; last error: tasks/0/owner: '' should be non-empty; tasks/0/priority: '' is not one of ['high', 'medium', 'low'])"
+    ],
+    "raw_valid": false,
+    "latency_s": 8.875,
+    "tokens": 1034,
+    "cost_usd": 0.0,
+    "retried": true,
+    "fallback": false,
+    "model": null,
+    "error": "all models failed after 3 attempts; last error: tasks/0/owner: '' should be non-empty; tasks/0/priority: '' is not one of ['high', 'medium', 'low']",
     "has_constraints": true
    }
   ]

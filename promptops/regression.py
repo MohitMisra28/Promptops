@@ -96,6 +96,9 @@ def main(out_dir: Path | None = None) -> dict:
     out_dir.mkdir(exist_ok=True)
     configs = [run_config(cases, v, m, f"{v} + {m}") for v in ("v1", "v2") for m in ("mock-small", "mock-large")]
     configs.append(run_config(cases, "v2", None, "v2 + router (fallback on)"))
+    from .config import MODELS
+    for m in [x for x in MODELS if not x.startswith("mock-")]:
+        configs += [run_config(cases, v, m, f"{v} + {m}") for v in ("v1", "v2", "v3", "v4")]
     by = {(c["prompt_version"], c["model"]): c for c in configs}
     report = {"n_cases": len(cases), "configs": [{k: v for k, v in c.items() if k != "rows"} for c in configs],
               "cheaper_model": cheaper_enough(by[("v2", "mock-small")], by[("v2", "mock-large")]),

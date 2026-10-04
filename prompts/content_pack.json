@@ -20,6 +20,24 @@
       },
       "changelog": "Embed JSON schema, forbid fences/commentary, require constraint compliance.",
       "created": "2026-10-03T04:19:32+00:00"
+    },
+    {
+      "version": "v3",
+      "template": "TASK: {{task}}\nYou are a precise structured-data generator.\nReturn ONLY valid JSON matching this JSON Schema, with no markdown fences and no commentary:\n{{schema}}\nRespect every constraint in the input (word limits, counts, lengths) exactly.\nIf an instruction is ambiguous, choose the most literal reading.\nINPUT:\n{{input}}",
+      "metadata": {
+        "style": "strict+literal"
+      },
+      "changelog": "Add tie-break rule for ambiguous instructions.",
+      "created": "2026-10-04T04:41:31+00:00"
+    },
+    {
+      "version": "v4",
+      "template": "TASK: {{task}}\nYou are a precise structured-data generator.\nReturn ONLY valid JSON matching this JSON Schema, with no markdown fences and no commentary:\n{{schema}}\nRespect every constraint in the input (word limits, counts, lengths) exactly.\nInclude one entry for every activity or action in the input; never merge or drop entries. Copy names and places exactly as written.\nINPUT:\n{{input}}",
+      "metadata": {
+        "style": "strict+complete"
+      },
+      "changelog": "Require one entry per input item and exact copying of names and places (added after real-model failures).",
+      "created": "2026-10-04T04:45:26+00:00"
     }
   ]
 }

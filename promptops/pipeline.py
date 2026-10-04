@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import time
 from dataclasses import asdict, dataclass
 from typing import Callable
@@ -37,7 +38,7 @@ class Attempt:
 class PromptOps:
     def __init__(self, registry: Registry | None = None, cache: Cache | None = None,
                  telemetry: Telemetry | None = None, providers=None, models=None,
-                 max_retries: int = 2, timeout: float = 10.0):
+                 max_retries: int = 2, timeout: float = float(os.getenv("PROMPTOPS_TIMEOUT", "10"))):
         self.registry = registry or Registry()
         self.cache = cache or Cache()
         self.telemetry = telemetry or Telemetry()
@@ -92,7 +93,7 @@ class PromptOps:
             self.telemetry.record(res)
             return res
 
-        chain = route(task, priority, self.models)
+        chain = route(task, priority, self.models, len(text))
         if model:
             chain = [model] + ([m for m in chain if m != model] if allow_fallback else [])
         elif not allow_fallback:

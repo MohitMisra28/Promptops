@@ -132,3 +132,7 @@ def test_check_expectations_detects_violations():
     res = {"ok": True, "data": {"body": "a b c d"}, "warnings": []}
     assert check_expectations("announcement", res, {"max_body_words": 2})
     assert not check_expectations("announcement", res, {"max_body_words": 4})
+
+def test_router_sends_long_inputs_to_large_model():
+    assert route("announcement", "balanced", input_len=50)[0] == "mock-small"
+    assert route("announcement", "balanced", input_len=900)[0] == "mock-large"
